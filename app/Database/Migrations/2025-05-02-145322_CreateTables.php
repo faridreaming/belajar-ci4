@@ -75,6 +75,10 @@ class CreateTables extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '128',
             ],
+            'slug' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '128',
+            ],
             'isi' => [
                 'type' => 'TEXT',
             ],
