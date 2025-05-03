@@ -9,7 +9,8 @@ class AdminSeeder extends Seeder
     public function run()
     {
         $data = [
-            'username' => 'rezha',
+            'username' => 'RA Ar-Rayhan',
+            'email' => 'ra-arrayhan@gmail.com',
             // 'password' => password_hash('123', PASSWORD_DEFAULT),
             'password' => '123',
         ];

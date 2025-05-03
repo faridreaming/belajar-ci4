@@ -19,6 +19,10 @@ class CreateTables extends Migration
                 'type'       => 'VARCHAR',
                 'constraint' => '128',
             ],
+            'email' => [
+                'type'       => 'VARCHAR',
+                'constraint' => '128',
+            ],
             'password' => [
                 'type'       => 'VARCHAR',
                 'constraint' => '128',
