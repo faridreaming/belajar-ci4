@@ -5,4 +5,15 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-$routes->get('/', 'Home::index');
+
+// Admin routes
+$routes->group('admin', function ($routes) {
+    $routes->get('/', 'Admin::index');
+    $routes->get('berita', 'Berita::index');
+    $routes->get('gambar', 'Admin::index');
+});
+
+// Home routes
+$routes->group('', function ($routes) {
+    $routes->get('/', 'Home::index');
+});
