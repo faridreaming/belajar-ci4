@@ -74,6 +74,7 @@ class CreateTables extends Migration
             'gambar_id' => [
                 'type'       => 'INT',
                 'constraint' => 11,
+                'null'       => true,
             ],
             'judul' => [
                 'type'       => 'VARCHAR',
@@ -91,10 +92,6 @@ class CreateTables extends Migration
             ],
             'updated_at' => [
                 'type' => 'DATE',
-            ],
-            'status' => [
-                'type' => 'TINYINT',
-                'constraint' => 1,
             ],
         ]);
         $this->forge->addKey('berita_id', true);
