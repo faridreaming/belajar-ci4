@@ -12,7 +12,7 @@ class BeritaModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['gambar_id', 'judul', 'slug', 'isi', 'created_at', 'updated_at', 'status'];
+    protected $allowedFields    = ['gambar_id', 'judul', 'slug', 'isi', 'created_at', 'updated_at'];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
