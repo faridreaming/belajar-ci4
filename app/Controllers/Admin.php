@@ -21,7 +21,7 @@ class Admin extends BaseController
         ];
 
         $data = [
-            'title' => 'Dashboard Admin | RA Ar-Rayhan',
+            'title' => 'Dashboard Admin',
             'admin' => $this->adminModel->first(),
             'tabel' => $tabel
         ];

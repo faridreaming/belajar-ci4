@@ -43,4 +43,13 @@ class BeritaModel extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    // Custom methods
+    public function getBeritaWithGambar()
+    {
+        return $this->select('berita.*, gambar.judul as judul_gambar, gambar.nama_file as nama_file_gambar')
+            ->join('gambar', 'gambar.gambar_id = berita.gambar_id', 'left')
+            ->orderBy('updated_at', 'desc')
+            ->findAll();
+    }
 }

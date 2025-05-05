@@ -56,10 +56,6 @@ class CreateTables extends Migration
             'updated_at' => [
                 'type' => 'DATE',
             ],
-            'status' => [
-                'type' => 'TINYINT',
-                'constraint' => 1,
-            ],
         ]);
         $this->forge->addKey('gambar_id', true);
         $this->forge->createTable('gambar');
