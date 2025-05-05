@@ -105,6 +105,7 @@
     <script src="<?= base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            previewGambar()
             updateCharCount('judul', 'judulCount', 128);
             updateCharCount('isi', 'isiCount', 5000);
         });
@@ -168,6 +169,20 @@
                 setTimeout(() => alert.remove(), 500);
             }
         }, 3000);
+
+        let formToDelete = null;
+
+        document.querySelectorAll('.btn-trigger-hapus').forEach(button => {
+            button.addEventListener('click', function() {
+                formToDelete = this.closest('form');
+            });
+        });
+
+        document.getElementById('btnConfirmDelete').addEventListener('click', function() {
+            if (formToDelete) {
+                formToDelete.submit();
+            }
+        });
     </script>
 </body>
 

@@ -89,13 +89,13 @@ $totalSegments = $uri->getTotalSegments(); ?>
                                     <a class="btn btn-sm btn-primary text-white" title="Lihat berita" href="<?= base_url('berita/' . $berita->slug); ?>">
                                         <i class="bi bi-eye"></i>
                                     </a>
-                                    <a class="btn btn-sm btn-info text-white" title="Edit berita">
+                                    <a class="btn btn-sm btn-info text-white" title="Edit berita" href="<?= base_url('admin/berita/edit/' . $berita->berita_id); ?>">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
-                                    <form action="<?= base_url('admin/berita/' . $berita->berita_id); ?>" method="POST" class="d-inline">
+                                    <form action="<?= base_url('admin/berita/' . $berita->berita_id); ?>" method="POST" class="d-inline form-hapus">
                                         <?= csrf_field(); ?>
                                         <input type="hidden" name="_method" value="DELETE">
-                                        <button class="btn btn-sm btn-danger" title="Hapus berita" type="submit">
+                                        <button type="button" class="btn btn-sm btn-danger btn-trigger-hapus" title="Hapus berita" data-bs-toggle="modal" data-bs-target="#confirmDeleteModal">
                                             <i class="bi bi-trash3"></i>
                                         </button>
                                     </form>
@@ -108,4 +108,23 @@ $totalSegments = $uri->getTotalSegments(); ?>
         </div>
     </div>
 </div>
+<!-- Modal Konfirmasi Hapus -->
+<div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0">
+            <div class="modal-header bg-danger text-white">
+                <h5 class="modal-title" id="confirmDeleteModalLabel">Konfirmasi Hapus</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+            </div>
+            <div class="modal-body">
+                Apakah Anda yakin ingin menghapus berita ini? Tindakan ini tidak dapat dibatalkan.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Batal</button>
+                <button type="button" class="btn btn-danger rounded-pill" id="btnConfirmDelete">Hapus</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <?= $this->endSection(); ?>

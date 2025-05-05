@@ -14,6 +14,8 @@ $routes->group('admin', function ($routes) {
     $routes->get('berita/tambah', 'Berita::showTambahForm');
     $routes->post('berita/tambah', 'Berita::tambah');
     $routes->delete('berita/(:num)', 'Berita::delete/$1');
+    $routes->get('berita/edit/(:num)', 'Berita::showEditForm/$1');
+    $routes->put('berita/(:num)', 'Berita::edit/$1');
 
     $routes->get('gambar', 'Admin::index');
 });
