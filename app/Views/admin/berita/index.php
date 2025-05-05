@@ -92,9 +92,13 @@ $totalSegments = $uri->getTotalSegments(); ?>
                                     <a class="btn btn-sm btn-info text-white" title="Edit berita">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
-                                    <button class="btn btn-sm btn-danger" title="Hapus berita" type="submit">
-                                        <i class="bi bi-trash3"></i>
-                                    </button>
+                                    <form action="<?= base_url('admin/berita/' . $berita->berita_id); ?>" method="POST" class="d-inline">
+                                        <?= csrf_field(); ?>
+                                        <input type="hidden" name="_method" value="DELETE">
+                                        <button class="btn btn-sm btn-danger" title="Hapus berita" type="submit">
+                                            <i class="bi bi-trash3"></i>
+                                        </button>
+                                    </form>
                                 </div>
                             </td>
                         </tr>

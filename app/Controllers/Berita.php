@@ -54,4 +54,6 @@ class Berita extends BaseController
         $this->session->setFlashdata('success', 'Berita berhasil ditambahkan.');
         return redirect()->to(base_url('admin/berita'));
     }
+
+    public function delete($id)
 }
