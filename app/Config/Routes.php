@@ -20,4 +20,5 @@ $routes->group('admin', function ($routes) {
 // Home routes
 $routes->group('', function ($routes) {
     $routes->get('/', 'Home::index');
+    $routes->get('berita', 'Home::berita');
 });
