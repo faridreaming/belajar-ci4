@@ -1,5 +1,5 @@
 body {
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "Nunito Sans", system-ui, -apple-system, sans-serif;
     font-optical-sizing: auto;
 }
 
@@ -77,11 +77,6 @@ main.sidebar-active {
 .no-transition *,
 .no-transition #sidebar {
     transition: none;
-}
-
-#tabel-berita .berita-thumbnail {
-    width: 6rem;
-    height: 3.75rem;
 }
 
 .white-space-nowrap {

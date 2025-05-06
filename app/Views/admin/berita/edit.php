@@ -36,12 +36,13 @@ $totalSegments = $uri->getTotalSegments();
         <form action="<?= base_url('admin/berita/' . $berita->berita_id) ?>" method="post">
             <?= csrf_field() ?>
             <input type="hidden" name="_method" value="PUT">
+            <input type="hidden" name="slug" value="<?= $berita->slug ?>">
 
             <div class="row">
                 <!-- Kolom kiri -->
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <label for="judul" class="form-label">Judul</label>
+                        <label for="judul" class="form-label">Judul Berita</label>
                         <input type="text" name="judul" id="judul"
                             class="form-control <?= isset($errors['judul']) ? 'is-invalid' : '' ?>"
                             required maxlength="128"

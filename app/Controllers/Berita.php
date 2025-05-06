@@ -73,38 +73,22 @@ class Berita extends BaseController
 
     public function edit($id)
     {
-        $berita = $this->beritaModel->find($id);
+        $beritaLama = $this->beritaModel->find($id);
 
-        if (!$berita) {
-            return redirect()->to(base_url('admin/berita'))->with('error', 'Berita tidak ditemukan.');
-        }
+        // Validasi hanya jika judul diubah
+        if ($beritaLama && $beritaLama->judul !== $this->request->getPost('judul')) {
+            $rules = [
+                'judul' => [
+                    'rules' => 'is_unique[berita.judul]',
+                    'errors' => [
+                        'is_unique' => 'Judul berita sudah ada.',
+                    ],
+                ],
+            ];
 
-        $rules = [
-            'judul' => [
-                'rules' => 'required|max_length[128]|is_unique[berita.judul,id,{id}]',
-                'errors' => [
-                    'required' => 'Judul tidak boleh kosong.',
-                    'max_length' => 'Judul maksimal 128 karakter.',
-                    'is_unique' => 'Judul sudah digunakan.',
-                ],
-            ],
-            'isi' => [
-                'rules' => 'required|max_length[5000]',
-                'errors' => [
-                    'required' => 'Isi berita tidak boleh kosong.',
-                    'max_length' => 'Isi berita maksimal 5000 karakter.',
-                ],
-            ],
-            'gambar_id' => [
-                'rules' => 'permit_empty|integer',
-                'errors' => [
-                    'integer' => 'ID gambar harus berupa angka.',
-                ],
-            ],
-        ];
-
-        if (!$this->validate($rules)) {
-            return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            if (!$this->validate($rules)) {
+                return redirect()->back()->withInput()->with('errors', $this->validator->getErrors());
+            }
         }
 
         $data = [
@@ -119,6 +103,7 @@ class Berita extends BaseController
         $this->session->setFlashdata('success', 'Berita berhasil diperbarui.');
         return redirect()->to(base_url('admin/berita'));
     }
+
 
 
     public function delete($id)

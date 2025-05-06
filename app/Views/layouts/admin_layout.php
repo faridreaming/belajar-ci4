@@ -105,82 +105,97 @@
     <script src="<?= base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            updateCharCount('judul', 'judulCount', 128)
+            updateCharCount('isi', 'isiCount', 5000)
             previewGambar()
-            updateCharCount('judul', 'judulCount', 128);
-            updateCharCount('isi', 'isiCount', 5000);
-        });
+            previewFileGambar()
+        })
 
-        const sidebarToggle = document.getElementById('sidebar-toggle');
-        const sidebar = document.getElementById('sidebar');
-        const main = document.querySelector('main');
+        const sidebarToggle = document.getElementById('sidebar-toggle')
+        const sidebar = document.getElementById('sidebar')
+        const main = document.querySelector('main')
 
         window.onload = () => {
             setTimeout(() => {
-                document.body.classList.remove("no-transition");
-            }, 10);
+                document.body.classList.remove("no-transition")
+            }, 10)
 
-            const sidebarActive = localStorage.getItem('sidebarActive') === 'true';
+            const sidebarActive = localStorage.getItem('sidebarActive') === 'true'
             if (sidebarActive) {
-                sidebar.classList.add('active');
-                main.classList.add('sidebar-active');
+                sidebar.classList.add('active')
+                main.classList.add('sidebar-active')
             } else {
-                sidebar.classList.remove('active');
-                main.classList.remove('sidebar-active');
+                sidebar.classList.remove('active')
+                main.classList.remove('sidebar-active')
             }
         }
 
         sidebarToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('active');
-            main.classList.toggle('sidebar-active');
+            sidebar.classList.toggle('active')
+            main.classList.toggle('sidebar-active')
 
-            localStorage.setItem('sidebarActive', sidebar.classList.contains('active'));
-        });
+            localStorage.setItem('sidebarActive', sidebar.classList.contains('active'))
+        })
 
         function previewGambar() {
-            const select = document.getElementById('gambar_id');
-            const selectedOption = select.options[select.selectedIndex];
-            const fileName = selectedOption.getAttribute('data-nama-file');
-            const img = document.getElementById('preview');
+            const select = document.getElementById('gambar_id')
+            const selectedOption = select.options[select.selectedIndex]
+            const fileName = selectedOption.getAttribute('data-nama-file')
+            const img = document.getElementById('preview')
 
-            const basePath = "<?= base_url('assets/img/upload') ?>";
-            img.src = basePath + "/" + (fileName ?? "default.jpg");
+            const basePath = "<?= base_url('assets/img/upload') ?>"
+            img.src = basePath + "/" + (fileName ?? "default.jpg")
+        }
+
+        function previewFileGambar(event) {
+            const input = event.target
+            const preview = document.getElementById('preview')
+            const reader = new FileReader()
+
+            reader.onload = function() {
+                preview.src = reader.result
+            }
+
+            if (input.files && input.files[0]) {
+                reader.readAsDataURL(input.files[0])
+            }
         }
 
         function updateCharCount(inputId, countId, maxLength) {
-            const input = document.getElementById(inputId);
-            const countDisplay = document.getElementById(countId);
-            const currentLength = input.value.length;
+            const input = document.getElementById(inputId)
+            const countDisplay = document.getElementById(countId)
+            const currentLength = input.value.length
 
-            countDisplay.textContent = `${input.value.length} / ${maxLength} karakter`;
+            countDisplay.textContent = `${input.value.length} / ${maxLength} karakter`
             if (currentLength >= maxLength) {
-                countDisplay.classList.remove('text-muted');
-                countDisplay.classList.add('text-danger');
+                countDisplay.classList.remove('text-muted')
+                countDisplay.classList.add('text-danger')
             } else {
-                countDisplay.classList.add('text-muted');
-                countDisplay.classList.remove('text-danger');
+                countDisplay.classList.add('text-muted')
+                countDisplay.classList.remove('text-danger')
             }
         }
 
         setTimeout(function() {
-            const alert = document.getElementById('successAlert');
+            const alert = document.getElementById('successAlert')
             if (alert) {
-                alert.classList.remove('show');
-                alert.classList.add('fade');
-                setTimeout(() => alert.remove(), 500);
+                alert.classList.remove('show')
+                alert.classList.add('fade')
+                setTimeout(() => alert.remove(), 500)
             }
-        }, 3000);
+        }, 6000)
 
-        let formToDelete = null;
+        let formToDelete = null
 
         document.querySelectorAll('.btn-trigger-hapus').forEach(button => {
             button.addEventListener('click', function() {
-                formToDelete = this.closest('form');
-            });
-        });
+                formToDelete = this.closest('form')
+            })
+        })
 
         document.getElementById('btnConfirmDelete').addEventListener('click', function() {
             if (formToDelete) {
-                formToDelete.submit();
+                formToDelete.submit()
             }
         });
     </script>

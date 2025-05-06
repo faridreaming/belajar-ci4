@@ -17,7 +17,12 @@ $routes->group('admin', function ($routes) {
     $routes->get('berita/edit/(:num)', 'Berita::showEditForm/$1');
     $routes->put('berita/(:num)', 'Berita::edit/$1');
 
-    $routes->get('gambar', 'Admin::index');
+    $routes->get('gambar', 'Gambar::index');
+    $routes->get('gambar/tambah', 'Gambar::showTambahForm');
+    $routes->post('gambar/tambah', 'Gambar::tambah');
+    $routes->delete('gambar/(:num)', 'Gambar::delete/$1');
+    $routes->get('gambar/edit/(:num)', 'Gambar::showEditForm/$1');
+    $routes->put('gambar/(:num)', 'Gambar::edit/$1');
 });
 
 // Home routes

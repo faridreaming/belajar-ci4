@@ -58,9 +58,8 @@ $totalSegments = $uri->getTotalSegments(); ?>
                                 <div class="d-flex flex-column flex-sm-row gap-3 align-items-start align-items-sm-center">
                                     <img src="<?= $berita->gambar_id ? base_url('assets/img/upload/' . $berita->nama_file_gambar) : base_url('assets/img/upload/default.jpg'); ?>"
                                         alt="<?= $berita->slug; ?>"
-                                        class="img-fluid object-fit-cover rounded"
-                                        style="width: 100px; height: 70px;">
-
+                                        class="img-fluid object-fit-cover rounded-1"
+                                        style="width: 4rem; height: 4rem;">
                                     <div>
                                         <span class="fw-semibold text-truncate judul-berita" title="<?= esc($berita->judul); ?>">
                                             <?= esc($berita->judul); ?>
@@ -85,7 +84,7 @@ $totalSegments = $uri->getTotalSegments(); ?>
                                 </div>
                             </td>
                             <td>
-                                <div class="d-flex flex-wrap gap-1">
+                                <div class="d-flex flex-nowrap gap-1">
                                     <a class="btn btn-sm btn-primary text-white" title="Lihat berita" href="<?= base_url('berita/' . $berita->slug); ?>">
                                         <i class="bi bi-eye"></i>
                                     </a>

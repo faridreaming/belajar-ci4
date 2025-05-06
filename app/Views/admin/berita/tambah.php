@@ -39,7 +39,7 @@ $totalSegments = $uri->getTotalSegments(); ?>
                 <!-- Kolom kiri: Judul dan Isi -->
                 <div class="col-md-6">
                     <div class="mb-3">
-                        <label for="judul" class="form-label">Judul</label>
+                        <label for="judul" class="form-label">Judul Berita</label>
                         <input type="text" name="judul" id="judul"
                             class="form-control <?= isset($errors['judul']) ? 'is-invalid' : '' ?>"
                             required maxlength="128"
