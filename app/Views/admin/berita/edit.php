@@ -107,7 +107,7 @@ $totalSegments = $uri->getTotalSegments();
             </div>
 
             <div class="mt-3">
-                <button type="submit" class="btn btn-primary text-white">Simpan</button>
+                <button type="submit" class="btn btn-success text-white">Simpan</button>
                 <a href="<?= base_url('admin/berita') ?>" class="btn btn-secondary">Batal</a>
             </div>
         </form>

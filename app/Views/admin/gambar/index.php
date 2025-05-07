@@ -29,7 +29,7 @@ $totalSegments = $uri->getTotalSegments(); ?>
     <div class="card-body">
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3 gap-3">
             <h5 class="card-title m-0" style="font-size: 1.25rem;">Daftar Gambar</h5>
-            <a href="<?= base_url('admin/gambar/tambah'); ?>" class="btn btn-primary text-white rounded-pill px-3">
+            <a href="<?= base_url('admin/gambar/tambah'); ?>" class="btn btn-success text-white rounded-pill px-3">
                 Tambah Gambar <i class="bi bi-plus-lg"></i>
             </a>
         </div>

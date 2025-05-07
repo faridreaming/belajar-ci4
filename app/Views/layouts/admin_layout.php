@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title; ?> | RA Ar-Rayhan</title>
-    <link href="<?= base_url('assets/css/custom.css'); ?>" rel="stylesheet">
+    <link href="<?= base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/bootstrap-icons.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/admin-style.css'); ?>" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
                 <button class="btn btn-sm btn-white btn-light border-0 fs-5 p-2" id="sidebar-toggle">
                     <i class="bi bi-list d-flex"></i>
                 </button>
-                <a class="navbar-brand text-primary d-flex gap-2 fs-6 align-items-center m-0" href="<?= base_url('admin'); ?>">
+                <a class="navbar-brand text-success d-flex gap-2 fs-6 align-items-center m-0" href="<?= base_url('admin'); ?>">
                     <img src="<?= base_url('assets/img/logo.png'); ?>" alt="Logo" class="d-inline-block align-text-top">
                     <div>
                         <small class="small d-none d-sm-block" style="font-size: 16px;">RAUDHATUL ATHFAL</small>
@@ -68,17 +68,17 @@
 
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="<?= base_url('admin'); ?>" class="nav-link <?= $is_admin && !$is_berita && !$is_gambar ? 'bg-primary text-white disabled' : 'link-dark'; ?> rounded">
+                    <a href="<?= base_url('admin'); ?>" class="nav-link <?= $is_admin && !$is_berita && !$is_gambar ? 'bg-success text-white disabled' : 'link-dark'; ?> rounded">
                         <i class="bi bi-house-door me-2"></i> Dashboard
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url('admin/berita'); ?>" class="mt-1 nav-link <?= $is_berita ? 'bg-primary text-white disabled' : 'link-dark'; ?> rounded">
+                    <a href="<?= base_url('admin/berita'); ?>" class="mt-1 nav-link <?= $is_berita ? 'bg-success text-white disabled' : 'link-dark'; ?> rounded">
                         <i class="bi bi-newspaper me-2"></i> Berita
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url('admin/gambar'); ?>" class="mt-1 nav-link <?= $is_gambar ? 'bg-primary text-white disabled' : 'link-dark'; ?> rounded">
+                    <a href="<?= base_url('admin/gambar'); ?>" class="mt-1 nav-link <?= $is_gambar ? 'bg-success text-white disabled' : 'link-dark'; ?> rounded">
                         <i class="bi bi-images me-2"></i> Gambar
                     </a>
                 </li>

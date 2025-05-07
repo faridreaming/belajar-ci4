@@ -29,7 +29,7 @@ $totalSegments = $uri->getTotalSegments(); ?>
     <div class="card-body">
         <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3 gap-3">
             <h5 class="card-title m-0">Daftar Berita</h5>
-            <a href="<?= base_url('admin/berita/tambah'); ?>" class="btn btn-primary text-white rounded-pill px-3">
+            <a href="<?= base_url('admin/berita/tambah'); ?>" class="btn btn-success text-white rounded-pill px-3">
                 Tambah Berita <i class="bi bi-plus-lg"></i>
             </a>
         </div>
@@ -85,7 +85,7 @@ $totalSegments = $uri->getTotalSegments(); ?>
                             </td>
                             <td>
                                 <div class="d-flex flex-nowrap gap-1">
-                                    <a class="btn btn-sm btn-primary text-white" title="Lihat berita" href="<?= base_url('berita/' . $berita->slug); ?>">
+                                    <a class="btn btn-sm btn-success text-white" title="Lihat berita" href="<?= base_url('berita/' . $berita->slug); ?>">
                                         <i class="bi bi-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-info text-white" title="Edit berita" href="<?= base_url('admin/berita/edit/' . $berita->berita_id); ?>">

@@ -14,7 +14,7 @@
         <div class="col-12 col-sm-6">
             <div class="card h-100">
                 <div class="card-body d-flex align-items-center gap-3">
-                    <div class="d-flex bg-primary p-3 text-white rounded fs-3 icon-wrapper">
+                    <div class="d-flex bg-success p-3 text-white rounded fs-3 icon-wrapper">
                         <i class="bi <?= $item['icon']; ?> d-flex"></i>
                     </div>
                     <div>
