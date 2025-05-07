@@ -16,7 +16,7 @@ $totalSegments = $uri->getTotalSegments(); ?>
                     ?>
                     <li class="breadcrumb-item <?= $isLast ? 'active' : '' ?>" <?= $isLast ? 'aria-current="page"' : '' ?>>
                         <?php if (!$isLast): ?>
-                            <a class="text-decoration-none" href="<?= $link ?>"><?= ucfirst($segment) ?></a>
+                            <a class="text-decoration-none link-success" href="<?= $link ?>"><?= ucfirst($segment) ?></a>
                         <?php else: ?>
                             <?= ucfirst($segment) ?>
                         <?php endif; ?>
@@ -59,7 +59,7 @@ $totalSegments = $uri->getTotalSegments(); ?>
                             </p>
                         </div>
                         <div class="card-footer d-flex justify-content-end gap-2">
-                            <a class="btn btn-sm btn-info text-white"
+                            <a class="btn btn-sm btn-primary"
                                 title="Edit gambar"
                                 href="<?= base_url('admin/gambar/edit/' . $gambar->gambar_id); ?>">
                                 <i class="bi bi-pencil-square"></i>

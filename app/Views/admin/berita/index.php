@@ -16,7 +16,7 @@ $totalSegments = $uri->getTotalSegments(); ?>
                     ?>
                     <li class="breadcrumb-item <?= $isLast ? 'active' : '' ?>" <?= $isLast ? 'aria-current="page"' : '' ?>>
                         <?php if (!$isLast): ?>
-                            <a class="text-decoration-none" href="<?= $link ?>"><?= ucfirst($segment) ?></a>
+                            <a class="text-decoration-none link-success" href="<?= $link ?>"><?= ucfirst($segment) ?></a>
                         <?php else: ?>
                             <?= ucfirst($segment) ?>
                         <?php endif; ?>
@@ -88,7 +88,7 @@ $totalSegments = $uri->getTotalSegments(); ?>
                                     <a class="btn btn-sm btn-success text-white" title="Lihat berita" href="<?= base_url('berita/' . $berita->slug); ?>">
                                         <i class="bi bi-eye"></i>
                                     </a>
-                                    <a class="btn btn-sm btn-info text-white" title="Edit berita" href="<?= base_url('admin/berita/edit/' . $berita->berita_id); ?>">
+                                    <a class="btn btn-sm btn-primary" title="Edit berita" href="<?= base_url('admin/berita/edit/' . $berita->berita_id); ?>">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
                                     <form action="<?= base_url('admin/berita/' . $berita->berita_id); ?>" method="POST" class="d-inline form-hapus">

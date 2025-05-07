@@ -84,7 +84,7 @@
                 </li>
                 <li class="nav-item">
                     <hr>
-                    <a href="<?= base_url('/'); ?>" target="_blank" class="nav-link">
+                    <a href="<?= base_url('/'); ?>" target="_blank" class="nav-link link-success">
                         <i class="bi bi-box-arrow-up-right me-2"></i> Lihat Website
                     </a>
                 </li>

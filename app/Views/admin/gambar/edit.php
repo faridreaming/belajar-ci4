@@ -19,7 +19,7 @@ $totalSegments = $uri->getTotalSegments();
                     ?>
                     <li class="breadcrumb-item <?= $isLast ? 'active' : '' ?>" <?= $isLast ? 'aria-current="page"' : '' ?>>
                         <?php if (!$isLast): ?>
-                            <a class="text-decoration-none" href="<?= $link ?>"><?= ucfirst($segment) ?></a>
+                            <a class="text-decoration-none link-success" href="<?= $link ?>"><?= ucfirst($segment) ?></a>
                         <?php else: ?>
                             <?= ucfirst($segment) ?>
                         <?php endif; ?>
