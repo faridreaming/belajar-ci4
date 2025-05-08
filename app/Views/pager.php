@@ -1,5 +1,5 @@
 <?php
-$pager->setSurroundCount(1);
+$pager->setSurroundCount(2);
 ?>
 
 <nav aria-label="<?= lang('Pager.pageNavigation') ?>">
@@ -38,4 +38,4 @@ $pager->setSurroundCount(1);
             </li>
         <?php endif ?>
     </ul>
-</nav> 
+</nav>
