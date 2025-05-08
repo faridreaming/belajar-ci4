@@ -1,0 +1,9 @@
+body {
+    font-family: "Nunito Sans", system-ui, -apple-system, sans-serif;
+    font-optical-sizing: auto;
+}
+
+.logo-login {
+    width: 10rem;
+    height: 10rem;
+}
