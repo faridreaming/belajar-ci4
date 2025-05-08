@@ -11,11 +11,20 @@ class Berita extends BaseController
     {
         $this->requireLogin();
 
+        $search = $this->request->getGet('search');
+        $query = $this->beritaModel->getBeritaWithGambar();
+
+        if ($search) {
+            $query = $query->like('berita.judul', $search)
+                          ->orLike('berita.isi', $search);
+        }
+
         $data = [
             'title' => 'Berita',
             'admin' => $this->getCurrentAdmin(),
-            'list_berita' => $this->beritaModel->getBeritaWithGambar()->paginate(5),
-            'pager' => $this->beritaModel->pager,
+            'list_berita' => $query->paginate(5),
+            'pager' => $query->pager,
+            'search' => $search
         ];
         return view('admin/berita/index', $data);
     }
