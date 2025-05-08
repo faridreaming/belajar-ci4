@@ -27,11 +27,27 @@ $totalSegments = $uri->getTotalSegments(); ?>
     </div>
 
     <div class="card-body">
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3 gap-3">
-            <h5 class="card-title m-0">Daftar Berita</h5>
-            <a href="<?= base_url('admin/berita/tambah'); ?>" class="btn btn-success text-white rounded-pill px-3">
-                Tambah Berita <i class="bi bi-plus-lg"></i>
-            </a>
+        <div class="d-flex flex-column gap-3 mb-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title m-0">Daftar Berita</h5>
+                <a href="<?= base_url('admin/berita/tambah'); ?>" class="btn btn-success text-white rounded-pill px-3">
+                    Tambah Berita <i class="bi bi-plus-lg"></i>
+                </a>
+            </div>
+            <form action="<?= base_url('admin/berita') ?>" method="GET">
+                <div class="input-group">
+                    <input type="text"
+                        class="form-control"
+                        name="search"
+                        value="<?= esc($search ?? '') ?>"
+                        placeholder="Cari berita berdasarkan judul atau isi..."
+                        aria-label="Search"
+                        aria-describedby="search-addon">
+                    <button type="submit" class="input-group-text" id="search-addon">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </form>
         </div>
 
         <?php if (session()->getFlashdata('success')): ?>
@@ -50,7 +66,11 @@ $totalSegments = $uri->getTotalSegments(); ?>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $nomor = 1; ?>
+                    <?php
+                    $page = service('request')->getGet('page') ?? 1;
+                    $perPage = 5;
+                    $nomor = ($page - 1) * $perPage + 1;
+                    ?>
                     <?php foreach ($list_berita as $berita): ?>
                         <tr>
                             <th scope="row"><?= $nomor++; ?></th>
