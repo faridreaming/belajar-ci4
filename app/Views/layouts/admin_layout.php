@@ -48,7 +48,7 @@
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item text-danger d-flex gap-2" href="<?= base_url('logout'); ?>"><i class="bi bi-box-arrow-right d-flex align-items-center"></i>Logout</a></li>
+                    <li><a class="dropdown-item text-danger d-flex gap-2" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal"><i class="bi bi-box-arrow-right d-flex align-items-center"></i>Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -84,7 +84,7 @@
                 </li>
                 <li class="nav-item">
                     <hr>
-                    <a href="<?= base_url('/'); ?>" target="_blank" class="nav-link link-success">
+                    <a href="<?= base_url('/'); ?>" target="_blank" class="nav-link link-success rounded">
                         <i class="bi bi-box-arrow-up-right me-2"></i> Lihat Website
                     </a>
                 </li>
@@ -101,102 +101,116 @@
         </div>
     </main>
 
+    <!-- Logout Modal -->
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0">
+                <div class="modal-header bg-success text-white">
+                    <h5 class="modal-title" id="logoutModalLabel">Konfirmasi Logout</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Tutup"></button>
+                </div>
+                <div class="modal-body">
+                    Apakah Anda yakin ingin keluar dari sistem?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">Batal</button>
+                    <a href="<?= base_url('auth/logout'); ?>" class="btn btn-success rounded-pill">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- footer -->
     <script src="<?= base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
     <script>
+        // Initialize form-related functionality
         document.addEventListener('DOMContentLoaded', () => {
-            updateCharCount('judul', 'judulCount', 128)
-            updateCharCount('isi', 'isiCount', 5000)
-            previewGambar()
-            previewFileGambar()
-        })
+            updateCharCount('judul', 'judulCount', 128);
+            updateCharCount('isi', 'isiCount', 5000);
+            previewGambar();
+            previewFileGambar();
+        });
 
-        const sidebarToggle = document.getElementById('sidebar-toggle')
-        const sidebar = document.getElementById('sidebar')
-        const main = document.querySelector('main')
+        // Sidebar toggle functionality
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebar = document.getElementById('sidebar');
+        const main = document.querySelector('main');
 
         window.onload = () => {
+            // Remove no-transition class after slight delay
             setTimeout(() => {
-                document.body.classList.remove("no-transition")
-            }, 10)
+                document.body.classList.remove("no-transition");
+            }, 10);
 
-            const sidebarActive = localStorage.getItem('sidebarActive') === 'true'
-            if (sidebarActive) {
-                sidebar.classList.add('active')
-                main.classList.add('sidebar-active')
-            } else {
-                sidebar.classList.remove('active')
-                main.classList.remove('sidebar-active')
-            }
-        }
+            // Restore sidebar state from localStorage
+            const sidebarActive = localStorage.getItem('sidebarActive') === 'true';
+            sidebar.classList.toggle('active', sidebarActive);
+            main.classList.toggle('sidebar-active', sidebarActive);
+        };
 
         sidebarToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('active')
-            main.classList.toggle('sidebar-active')
+            sidebar.classList.toggle('active');
+            main.classList.toggle('sidebar-active');
+            localStorage.setItem('sidebarActive', sidebar.classList.contains('active'));
+        });
 
-            localStorage.setItem('sidebarActive', sidebar.classList.contains('active'))
-        })
-
+        // Image preview functionality
         function previewGambar() {
-            const select = document.getElementById('gambar_id')
-            const selectedOption = select.options[select.selectedIndex]
-            const fileName = selectedOption.getAttribute('data-nama-file')
-            const img = document.getElementById('preview')
+            const select = document.getElementById('gambar_id');
+            const selectedOption = select.options[select.selectedIndex];
+            const fileName = selectedOption.getAttribute('data-nama-file');
+            const img = document.getElementById('preview');
+            const basePath = "<?= base_url('assets/img/upload') ?>";
 
-            const basePath = "<?= base_url('assets/img/upload') ?>"
-            img.src = basePath + "/" + (fileName ?? "default.jpg")
+            img.src = basePath + "/" + (fileName ?? "default.jpg");
         }
 
         function previewFileGambar(event) {
-            const input = event.target
-            const preview = document.getElementById('preview')
-            const reader = new FileReader()
+            const input = event.target;
+            const preview = document.getElementById('preview');
+            const reader = new FileReader();
 
-            reader.onload = function() {
-                preview.src = reader.result
-            }
+            reader.onload = () => {
+                preview.src = reader.result;
+            };
 
-            if (input.files && input.files[0]) {
-                reader.readAsDataURL(input.files[0])
+            if (input.files?.[0]) {
+                reader.readAsDataURL(input.files[0]);
             }
         }
 
+        // Character count functionality
         function updateCharCount(inputId, countId, maxLength) {
-            const input = document.getElementById(inputId)
-            const countDisplay = document.getElementById(countId)
-            const currentLength = input.value.length
+            const input = document.getElementById(inputId);
+            const countDisplay = document.getElementById(countId);
+            const currentLength = input.value.length;
 
-            countDisplay.textContent = `${input.value.length} / ${maxLength} karakter`
-            if (currentLength >= maxLength) {
-                countDisplay.classList.remove('text-muted')
-                countDisplay.classList.add('text-danger')
-            } else {
-                countDisplay.classList.add('text-muted')
-                countDisplay.classList.remove('text-danger')
-            }
+            countDisplay.textContent = `${currentLength} / ${maxLength} karakter`;
+            countDisplay.classList.toggle('text-danger', currentLength >= maxLength);
+            countDisplay.classList.toggle('text-muted', currentLength < maxLength);
         }
 
-        setTimeout(function() {
-            const alert = document.getElementById('successAlert')
+        // Alert auto-dismiss
+        setTimeout(() => {
+            const alert = document.getElementById('successAlert');
             if (alert) {
-                alert.classList.remove('show')
-                alert.classList.add('fade')
-                setTimeout(() => alert.remove(), 500)
+                alert.classList.remove('show');
+                alert.classList.add('fade');
+                setTimeout(() => alert.remove(), 500);
             }
-        }, 6000)
+        }, 6000);
 
-        let formToDelete = null
+        // Delete confirmation handling
+        let formToDelete = null;
 
         document.querySelectorAll('.btn-trigger-hapus').forEach(button => {
             button.addEventListener('click', function() {
-                formToDelete = this.closest('form')
-            })
-        })
+                formToDelete = this.closest('form');
+            });
+        });
 
-        document.getElementById('btnConfirmDelete').addEventListener('click', function() {
-            if (formToDelete) {
-                formToDelete.submit()
-            }
+        document.getElementById('btnConfirmDelete')?.addEventListener('click', () => {
+            formToDelete?.submit();
         });
     </script>
 </body>
