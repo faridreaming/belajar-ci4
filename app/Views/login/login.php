@@ -24,6 +24,20 @@
                         <p class="text-white-50 small mb-0">Masuk ke akun Anda</p>
                     </div>
                     <div class="card-body p-4">
+                        <?php if (session()->getFlashdata('error')) : ?>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <?= session()->getFlashdata('error') ?>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        <?php endif; ?>
+                        
+                        <?php if (session()->getFlashdata('success')) : ?>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <?= session()->getFlashdata('success') ?>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        <?php endif; ?>
+
                         <form action="<?= base_url('auth/login') ?>" method="POST">
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
