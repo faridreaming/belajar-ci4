@@ -11,11 +11,20 @@ class Gambar extends BaseController
     {
         $this->requireLogin();
 
+        $search = $this->request->getGet('search');
+        $query = $this->gambarModel;
+
+        if ($search) {
+            $query = $query->like('judul', $search)
+                ->orLike('jenis', $search);
+        }
+
         $data = [
             'title' => 'Gambar',
             'admin' => $this->getCurrentAdmin(),
-            'list_gambar' => $this->gambarModel->paginate(8),
-            'pager' => $this->gambarModel->pager,
+            'list_gambar' => $query->paginate(8),
+            'pager' => $query->pager,
+            'search' => $search
         ];
         return view('admin/gambar/index', $data);
     }
@@ -74,7 +83,7 @@ class Gambar extends BaseController
     public function showEditForm($id)
     {
         $this->requireLogin();
-        
+
         $gambar = $this->gambarModel->find($id);
 
         if (!$gambar) {
