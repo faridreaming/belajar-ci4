@@ -30,3 +30,15 @@ $routes->group('', function ($routes) {
     $routes->get('/', 'Home::index');
     $routes->get('berita', 'Home::berita');
 });
+
+// Auth routes
+$routes->group('auth', function ($routes) {
+    $routes->get('login', 'Auth::showLoginForm');
+    $routes->post('login', 'Auth::login');
+    $routes->get('logout', 'Auth::logout');
+});
+
+// Dashboard redirect
+$routes->get('dashboard', function() {
+    return redirect()->to(base_url('admin'));
+});
