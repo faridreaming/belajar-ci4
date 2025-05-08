@@ -27,11 +27,27 @@ $totalSegments = $uri->getTotalSegments(); ?>
     </div>
 
     <div class="card-body">
-        <div class="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-3 gap-3">
-            <h5 class="card-title m-0" style="font-size: 1.25rem;">Daftar Gambar</h5>
-            <a href="<?= base_url('admin/gambar/tambah'); ?>" class="btn btn-success text-white rounded-pill px-3">
-                Tambah Gambar <i class="bi bi-plus-lg"></i>
-            </a>
+        <div class="d-flex flex-column gap-3 mb-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="card-title m-0">Daftar Gambar</h5>
+                <a href="<?= base_url('admin/gambar/tambah'); ?>" class="btn btn-success text-white rounded-pill px-3">
+                    Tambah Gambar <i class="bi bi-plus-lg"></i>
+                </a>
+            </div>
+            <form action="<?= base_url('admin/gambar') ?>" method="GET">
+                <div class="input-group">
+                    <input type="text"
+                        class="form-control"
+                        name="search"
+                        value="<?= esc($search ?? '') ?>"
+                        placeholder="Cari gambar berdasarkan judul atau jenis..."
+                        aria-label="Search"
+                        aria-describedby="search-addon">
+                    <button type="submit" class="input-group-text" id="search-addon">
+                        <i class="bi bi-search"></i>
+                    </button>
+                </div>
+            </form>
         </div>
 
         <?php if (session()->getFlashdata('success')): ?>
@@ -59,6 +75,12 @@ $totalSegments = $uri->getTotalSegments(); ?>
                             </p>
                         </div>
                         <div class="card-footer d-flex justify-content-end gap-2">
+                            <a class="btn btn-sm btn-success"
+                                title="Lihat gambar"
+                                href="<?= base_url('assets/img/upload/' . $gambar->nama_file); ?>"
+                                target="_blank">
+                                <i class="bi bi-eye"></i>
+                            </a>
                             <a class="btn btn-sm btn-primary"
                                 title="Edit gambar"
                                 href="<?= base_url('admin/gambar/edit/' . $gambar->gambar_id); ?>">
@@ -85,7 +107,6 @@ $totalSegments = $uri->getTotalSegments(); ?>
     </div>
 </div>
 
-<!-- Modal Konfirmasi Hapus -->
 <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-labelledby="confirmDeleteModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content border-0">
