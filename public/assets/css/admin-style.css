@@ -1,8 +1,10 @@
+/* Base styles */
 body {
     font-family: "Nunito Sans", system-ui, -apple-system, sans-serif;
     font-optical-sizing: auto;
 }
 
+/* Navbar */
 .navbar-brand {
     font-family: "Noto Serif Georgian", serif;
     font-weight: 600;
@@ -24,6 +26,7 @@ nav .dropdown-header img {
     height: 2.5rem;
 }
 
+/* Utility classes */
 .btn-white {
     background-color: #fff;
 }
@@ -33,15 +36,26 @@ nav .dropdown-header img {
     height: fit-content;
 }
 
-.dashboard-message img {
-    width: 10rem;
-    height: 10rem;
+.white-space-nowrap {
+    white-space: nowrap;
 }
 
 .no-animation {
     transition: none;
 }
 
+.no-transition *,
+.no-transition #sidebar {
+    transition: none;
+}
+
+/* Dashboard */
+.dashboard-message img {
+    width: 10rem;
+    height: 10rem;
+}
+
+/* Sidebar */
 .sidebar a {
     white-space: nowrap;
 }
@@ -56,6 +70,7 @@ nav .dropdown-header img {
     transition: transform 0.3s ease;
 }
 
+/* Main content */
 main {
     transition: margin-left 0.3s ease;
 }
@@ -64,6 +79,17 @@ main.sidebar-active {
     margin-left: 250px;
 }
 
+/* News title */
+.judul-berita {
+    display: inline-block;
+    max-width: 20rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     #sidebar.active {
         transform: translateX(0);
@@ -72,22 +98,4 @@ main.sidebar-active {
     main.sidebar-active {
         margin-left: 0;
     }
-}
-
-.no-transition *,
-.no-transition #sidebar {
-    transition: none;
-}
-
-.white-space-nowrap {
-    white-space: nowrap;
-}
-
-.judul-berita {
-    display: inline-block;
-    max-width: 20rem; /* Atur sesuai kebutuhan */
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    vertical-align: middle;
 }
