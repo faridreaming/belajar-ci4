@@ -33,22 +33,22 @@
             </div>
             <div class="dropdown">
                 <button class="btn btn-sm btn-white btn-light border-0 dropdown-toggle rounded-pill p-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <img class="rounded-circle" src="<?= base_url('assets/img/no-image.png'); ?>" alt="<?= $admin->username; ?> photo">
+                    <img class="rounded-circle" src="<?= base_url('assets/img/no-image.png'); ?>" alt="<?= $admin ? $admin->username : 'Admin'; ?> photo">
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end shadow-sm">
                     <li>
                         <div class="dropdown-header d-flex gap-2">
-                            <img class="rounded-circle" src="<?= base_url('assets/img/no-image.png'); ?>" alt="<?= $admin->username; ?> photo">
+                            <img class="rounded-circle" src="<?= base_url('assets/img/no-image.png'); ?>" alt="<?= $admin ? $admin->username : 'Admin'; ?> photo">
                             <div>
-                                <div class="fw-semibold text-black"><?= $admin->username; ?></div>
-                                <div><?= $admin->email; ?></div>
+                                <div class="fw-semibold text-black"><?= $admin ? $admin->username : 'Admin'; ?></div>
+                                <div><?= $admin ? $admin->email : ''; ?></div>
                             </div>
                         </div>
                     </li>
                     <li>
                         <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item text-danger d-flex gap-2" href="#"><i class="bi bi-box-arrow-right d-flex align-items-center"></i>Logout</a></li>
+                    <li><a class="dropdown-item text-danger d-flex gap-2" href="<?= base_url('logout'); ?>"><i class="bi bi-box-arrow-right d-flex align-items-center"></i>Logout</a></li>
                 </ul>
             </div>
         </div>

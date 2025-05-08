@@ -68,4 +68,38 @@ abstract class BaseController extends Controller
         $this->beritaModel = new BeritaModel();
         $this->gambarModel = new GambarModel();
     }
+
+    /**
+     * Check if user is logged in as admin
+     * 
+     * @return bool
+     */
+    protected function isLoggedIn()
+    {
+        return $this->session->has('admin_id');
+    }
+
+    /**
+     * Require admin authentication
+     * Redirects to login page if not authenticated
+     */
+    protected function requireLogin()
+    {
+        if (!$this->isLoggedIn()) {
+            return redirect()->to(base_url('login'))->with('error', 'Silakan login terlebih dahulu.');
+        }
+    }
+
+    /**
+     * Get current admin data
+     * 
+     * @return array|null
+     */
+    protected function getCurrentAdmin()
+    {
+        if ($this->isLoggedIn()) {
+            return $this->adminModel->find($this->session->get('admin_id'));
+        }
+        return null;
+    }
 }

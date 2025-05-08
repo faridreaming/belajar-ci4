@@ -9,18 +9,24 @@ class Gambar extends BaseController
 {
     public function index()
     {
-        return view('admin/gambar/index', [
+        $this->requireLogin();
+
+        $data = [
             'title' => 'Gambar',
-            'admin' => $this->adminModel->first(),
-            'list_gambar' => $this->gambarModel->findAll(),
-        ]);
+            'admin' => $this->getCurrentAdmin(),
+            'list_gambar' => $this->gambarModel->paginate(8),
+            'pager' => $this->gambarModel->pager,
+        ];
+        return view('admin/gambar/index', $data);
     }
 
     public function showTambahForm()
     {
+        $this->requireLogin();
+
         return view('admin/gambar/tambah', [
             'title' => 'Tambah Gambar',
-            'admin' => $this->adminModel->first(),
+            'admin' => $this->getCurrentAdmin(),
             'list_gambar' => $this->gambarModel->findAll(),
         ]);
     }
@@ -67,6 +73,8 @@ class Gambar extends BaseController
 
     public function showEditForm($id)
     {
+        $this->requireLogin();
+        
         $gambar = $this->gambarModel->find($id);
 
         if (!$gambar) {
@@ -75,7 +83,7 @@ class Gambar extends BaseController
 
         return view('admin/gambar/edit', [
             'title' => 'Edit Gambar',
-            'admin' => $this->adminModel->first(),
+            'admin' => $this->getCurrentAdmin(),
             'list_gambar' => $this->gambarModel->findAll(),
             'gambar' => $gambar,
         ]);
@@ -125,14 +133,19 @@ class Gambar extends BaseController
 
     public function delete($id)
     {
-        $berita = $this->beritaModel->find($id);
+        $gambar = $this->gambarModel->find($id);
 
-        if (!$berita) {
-            return redirect()->to(base_url('admin/berita'))->with('error', 'Berita tidak ditemukan.');
+        if (!$gambar) {
+            return redirect()->to(base_url('admin/gambar'))->with('error', 'Gambar tidak ditemukan.');
         }
 
-        $this->beritaModel->delete($id);
-        $this->session->setFlashdata('success', 'Berita berhasil dihapus.');
-        return redirect()->to(base_url('admin/berita'));
+        // Delete the image file
+        if (file_exists('assets/img/upload/' . $gambar['nama_file'])) {
+            unlink('assets/img/upload/' . $gambar['nama_file']);
+        }
+
+        $this->gambarModel->delete($id);
+        $this->session->setFlashdata('success', 'Gambar berhasil dihapus.');
+        return redirect()->to(base_url('admin/gambar'));
     }
 }

@@ -15,7 +15,7 @@ class Pager extends BaseConfig
      * appearance. This array contains aliases and the view names to
      * use when rendering the links.
      *
-     * Within each view, the Pager object will be available as $pager,
+     * Within each view, the Pager object is available as $pager,
      * and the desired group as $pagerGroup;
      *
      * @var array<string, string>
@@ -24,6 +24,7 @@ class Pager extends BaseConfig
         'default_full'   => 'CodeIgniter\Pager\Views\default_full',
         'default_simple' => 'CodeIgniter\Pager\Views\default_simple',
         'default_head'   => 'CodeIgniter\Pager\Views\default_head',
+        'default'        => 'pager',
     ];
 
     /**

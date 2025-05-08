@@ -40,7 +40,7 @@ $totalSegments = $uri->getTotalSegments(); ?>
             </div>
         <?php endif; ?>
 
-        <div class="row g-3 justify-content-center">
+        <div class="row g-3 justify-content-center mb-3">
             <?php foreach ($list_gambar as $gambar): ?>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch">
                     <div class="card w-100">
@@ -80,6 +80,8 @@ $totalSegments = $uri->getTotalSegments(); ?>
                 </div>
             <?php endforeach; ?>
         </div>
+
+        <?= $pager->links('default', 'default') ?>
     </div>
 </div>
 

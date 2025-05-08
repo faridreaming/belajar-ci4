@@ -105,6 +105,8 @@ $totalSegments = $uri->getTotalSegments(); ?>
                 </tbody>
             </table>
         </div>
+
+        <?= $pager->links('default', 'default') ?>
     </div>
 </div>
 <!-- Modal Konfirmasi Hapus -->

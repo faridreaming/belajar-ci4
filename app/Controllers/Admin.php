@@ -9,6 +9,8 @@ class Admin extends BaseController
 {
     public function index()
     {
+        $this->requireLogin();
+
         $tabel = [
             'Berita' => [
                 'jumlahData' => $this->beritaModel->countAllResults(),
@@ -22,7 +24,7 @@ class Admin extends BaseController
 
         $data = [
             'title' => 'Dashboard Admin',
-            'admin' => $this->adminModel->first(),
+            'admin' => $this->getCurrentAdmin(),
             'tabel' => $tabel
         ];
         return view('admin/dashboard', $data);
