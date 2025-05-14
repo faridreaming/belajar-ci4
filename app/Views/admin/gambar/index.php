@@ -57,6 +57,13 @@ $totalSegments = $uri->getTotalSegments(); ?>
         <?php endif; ?>
 
         <div class="row g-3 justify-content-center mb-3">
+            <?php if (empty($list_gambar)): ?>
+                <div class="col-12">
+                    <div class="text-center py-4">
+                        <div class="text-muted fst-italic">Belum ada gambar.</div>
+                    </div>
+                </div>
+            <?php else: ?>
             <?php foreach ($list_gambar as $gambar): ?>
                 <div class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch">
                     <div class="card w-100">
@@ -70,8 +77,14 @@ $totalSegments = $uri->getTotalSegments(); ?>
                             </h5>
                             <p class="card-text mb-2">
                                 <strong>Jenis:</strong> <?= $gambar->jenis; ?><br>
-                                <strong>Dibuat:</strong> <?= $gambar->created_at; ?><br>
-                                <strong>Diubah:</strong> <?= $gambar->updated_at; ?>
+                                <strong>Dibuat:</strong> <?php
+                                    $createdAt = new DateTime($gambar->created_at);
+                                    echo $createdAt->format('j F Y, H:i');
+                                ?><br>
+                                <strong>Diubah:</strong> <?php
+                                    $updatedAt = new DateTime($gambar->updated_at);
+                                    echo $updatedAt->format('j F Y, H:i');
+                                ?>
                             </p>
                         </div>
                         <div class="card-footer d-flex justify-content-end gap-2">
@@ -101,6 +114,7 @@ $totalSegments = $uri->getTotalSegments(); ?>
                     </div>
                 </div>
             <?php endforeach; ?>
+            <?php endif; ?>
         </div>
 
         <?= $pager->links('default', 'default') ?>

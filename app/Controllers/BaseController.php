@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\AdminModel;
 use App\Models\BeritaModel;
 use App\Models\GambarModel;
+use App\Models\PrestasiModel;
 use CodeIgniter\Controller;
 use CodeIgniter\HTTP\CLIRequest;
 use CodeIgniter\HTTP\IncomingRequest;
@@ -35,6 +36,7 @@ abstract class BaseController extends Controller
     protected $adminModel;
     protected $beritaModel;
     protected $gambarModel;
+    protected $prestasiModel;
 
     /**
      * An array of helpers to be loaded automatically upon
@@ -64,9 +66,10 @@ abstract class BaseController extends Controller
         // E.g.: $this->session = service('session');
         $this->session = \Config\Services::session();
 
-        $this->adminModel  = new AdminModel();
-        $this->beritaModel = new BeritaModel();
-        $this->gambarModel = new GambarModel();
+        $this->adminModel = new \App\Models\AdminModel();
+        $this->gambarModel = new \App\Models\GambarModel();
+        $this->beritaModel = new \App\Models\BeritaModel();
+        $this->prestasiModel = new \App\Models\PrestasiModel();
     }
 
     /**

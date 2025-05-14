@@ -63,18 +63,24 @@
 
             $is_admin = str_starts_with($uri, 'admin');
             $is_berita = str_starts_with($uri, 'admin/berita');
+            $is_prestasi = str_starts_with($uri, 'admin/prestasi');
             $is_gambar = str_starts_with($uri, 'admin/gambar');
             ?>
 
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="<?= base_url('admin'); ?>" class="nav-link <?= $is_admin && !$is_berita && !$is_gambar ? 'bg-success text-white disabled' : 'link-dark'; ?> rounded">
+                    <a href="<?= base_url('admin'); ?>" class="nav-link <?= $is_admin && !$is_berita && !$is_prestasi && !$is_gambar ? 'bg-success text-white disabled' : 'link-dark'; ?> rounded">
                         <i class="bi bi-house-door me-2"></i> Dashboard
                     </a>
                 </li>
                 <li class="nav-item">
                     <a href="<?= base_url('admin/berita'); ?>" class="mt-1 nav-link <?= $is_berita ? 'bg-success text-white disabled' : 'link-dark'; ?> rounded">
                         <i class="bi bi-newspaper me-2"></i> Berita
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('admin/prestasi'); ?>" class="mt-1 nav-link <?= $is_prestasi ? 'bg-success text-white disabled' : 'link-dark'; ?> rounded">
+                        <i class="bi bi-trophy me-2"></i> Prestasi
                     </a>
                 </li>
                 <li class="nav-item">
@@ -125,10 +131,21 @@
     <script>
         // Initialize form-related functionality
         document.addEventListener('DOMContentLoaded', () => {
-            updateCharCount('judul', 'judulCount', 128);
-            updateCharCount('isi', 'isiCount', 5000);
-            previewGambar();
-            previewFileGambar();
+            // Initialize character counters if elements exist
+            ['judul', 'isi', 'prestasi', 'tingkat', 'jenis', 'deskripsi'].forEach(id => {
+                const element = document.getElementById(id);
+                const countElement = document.getElementById(id + 'Count');
+                if (element && countElement) {
+                    const maxLength = element.getAttribute('maxlength') || (id === 'isi' || id === 'deskripsi' ? 5000 : 128);
+                    updateCharCount(id, id + 'Count', maxLength);
+                }
+            });
+
+            // Initialize image preview if elements exist
+            if (document.getElementById('preview')) {
+                previewGambar();
+                previewFileGambar();
+            }
         });
 
         // Sidebar toggle functionality

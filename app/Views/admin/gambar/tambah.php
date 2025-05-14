@@ -73,7 +73,7 @@ $totalSegments = $uri->getTotalSegments();
                         <label for="file_gambar" class="form-label">File Gambar</label>
                         <input type="file" name="file_gambar" id="file_gambar"
                             class="form-control <?= isset($errors['file_gambar']) ? 'is-invalid' : '' ?>"
-                            accept="image/*" required onchange="previewFileGambar(event)">
+                            accept="image/jpeg,image/jpg,image/png,image/webp" required onchange="previewFileGambar(event)">
                         <?php if (isset($errors['file_gambar'])): ?>
                             <div class="invalid-feedback">
                                 <?= esc($errors['file_gambar']) ?>

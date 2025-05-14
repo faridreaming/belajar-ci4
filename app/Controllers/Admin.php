@@ -16,6 +16,10 @@ class Admin extends BaseController
                 'jumlahData' => $this->beritaModel->countAllResults(),
                 'icon' => 'bi-newspaper'
             ],
+            'Prestasi' => [
+                'jumlahData' => $this->prestasiModel->countAllResults(),
+                'icon' => 'bi-award'
+            ],
             'Gambar' => [
                 'jumlahData' => $this->gambarModel->countAllResults(),
                 'icon' => 'bi-images'

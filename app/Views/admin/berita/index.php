@@ -71,6 +71,13 @@ $totalSegments = $uri->getTotalSegments(); ?>
                     $perPage = 5;
                     $nomor = ($page - 1) * $perPage + 1;
                     ?>
+                    <?php if (empty($list_berita)): ?>
+                        <tr>
+                            <td colspan="3" class="text-center py-4">
+                                <div class="text-muted fst-italic">Belum ada berita.</div>
+                            </td>
+                        </tr>
+                    <?php else: ?>
                     <?php foreach ($list_berita as $berita): ?>
                         <tr>
                             <th scope="row"><?= $nomor++; ?></th>
@@ -89,23 +96,16 @@ $totalSegments = $uri->getTotalSegments(); ?>
                                             <?php
                                             $createdAt = new DateTime($berita->created_at);
                                             $updatedAt = new DateTime($berita->updated_at);
-                                            $now = new DateTime();
-
-                                            $intervalCreated = $createdAt->diff($now);
-                                            $intervalUpdated = $updatedAt->diff($now);
-
-                                            $createdText = ($intervalCreated->y * 12 + $intervalCreated->m) . ' bulan ' . $intervalCreated->d . ' hari';
-                                            $updatedText = ($intervalUpdated->y * 12 + $intervalUpdated->m) . ' bulan ' . $intervalUpdated->d . ' hari';
                                             ?>
-                                            Dibuat: <?= trim($createdText) ?> yang lalu <br>
-                                            Diubah: <?= trim($updatedText) ?> yang lalu
+                                            Dibuat: <?= $createdAt->format('j F Y, H:i') ?> <br>
+                                            Diubah: <?= $updatedAt->format('j F Y, H:i') ?>
                                         </small>
                                     </div>
                                 </div>
                             </td>
                             <td>
                                 <div class="d-flex flex-nowrap gap-1">
-                                    <a class="btn btn-sm btn-success text-white" title="Lihat berita" href="<?= base_url('berita/' . $berita->slug); ?>">
+                                    <a class="btn btn-sm btn-success text-white" target="_blank" title="Lihat berita" href="<?= base_url('berita/' . $berita->slug); ?>">
                                         <i class="bi bi-eye"></i>
                                     </a>
                                     <a class="btn btn-sm btn-primary" title="Edit berita" href="<?= base_url('admin/berita/edit/' . $berita->berita_id); ?>">
@@ -122,6 +122,7 @@ $totalSegments = $uri->getTotalSegments(); ?>
                             </td>
                         </tr>
                     <?php endforeach; ?>
+                    <?php endif; ?>
                 </tbody>
             </table>
         </div>

@@ -11,7 +11,7 @@
 
 <div class="row g-3">
     <?php foreach ($tabel as $nama => $item): ?>
-        <div class="col-12 col-sm-6">
+        <div class="col-12 col-sm-6 col-md-4">
             <div class="card h-100">
                 <div class="card-body d-flex align-items-center gap-3">
                     <div class="d-flex bg-success p-3 text-white rounded fs-3 icon-wrapper">

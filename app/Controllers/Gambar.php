@@ -51,12 +51,12 @@ class Gambar extends BaseController
                 //     ],
                 // ],
                 'file_gambar' => [
-                    'rules' => 'uploaded[file_gambar]|max_size[file_gambar,2048]|is_image[file_gambar]|mime_in[file_gambar,image/jpg,image/jpeg,image/png]',
+                    'rules' => 'uploaded[file_gambar]|max_size[file_gambar,2048]|is_image[file_gambar]|mime_in[file_gambar,image/jpg,image/jpeg,image/png,image/webp]',
                     'errors' => [
                         'uploaded' => 'File gambar tidak boleh kosong.',
                         'max_size' => 'Ukuran file gambar maksimal 2MB.',
                         'is_image' => 'File yang diunggah bukan gambar.',
-                        'mime_in' => 'Format gambar tidak didukung. Hanya JPG, JPEG, dan PNG yang diperbolehkan.',
+                        'mime_in' => 'Format gambar tidak didukung. Hanya JPG, JPEG, PNG, dan WebP yang diperbolehkan.',
                     ],
                 ],
             ]
@@ -71,8 +71,8 @@ class Gambar extends BaseController
             'judul'      => $this->request->getPost('judul'),
             'jenis'      => $this->request->getPost('jenis'),
             'nama_file'  => $fileName,
-            'created_at' => date('Y-m-d'),
-            'updated_at' => date('Y-m-d'),
+            'created_at' => date('Y-m-d H:i:s'),
+            'updated_at' => date('Y-m-d H:i:s'),
         ];
 
         $this->gambarModel->insert($data);
@@ -107,11 +107,11 @@ class Gambar extends BaseController
             if (!$this->validate(
                 [
                     'file_gambar' => [
-                        'rules' => 'max_size[file_gambar,2048]|is_image[file_gambar]|mime_in[file_gambar,image/jpg,image/jpeg,image/png]',
+                        'rules' => 'max_size[file_gambar,2048]|is_image[file_gambar]|mime_in[file_gambar,image/jpg,image/jpeg,image/png,image/webp]',
                         'errors' => [
                             'max_size' => 'Ukuran file gambar maksimal 2MB.',
                             'is_image' => 'File yang diunggah bukan gambar.',
-                            'mime_in' => 'Format gambar tidak didukung. Hanya JPG, JPEG, dan PNG yang diperbolehkan.',
+                            'mime_in' => 'Format gambar tidak didukung. Hanya JPG, JPEG, PNG, dan WebP yang diperbolehkan.',
                         ],
                     ],
                 ]
@@ -132,7 +132,7 @@ class Gambar extends BaseController
             'judul'      => $this->request->getPost('judul'),
             'jenis'      => $this->request->getPost('jenis'),
             'nama_file'  => $fileName,
-            'updated_at' => date('Y-m-d'),
+            'updated_at' => date('Y-m-d H:i:s'),
         ];
         $this->gambarModel->update($id, $data);
         $this->session->setFlashdata('success', 'Gambar berhasil diubah.');

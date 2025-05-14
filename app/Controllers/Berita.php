@@ -145,7 +145,7 @@ class Berita extends BaseController
         ];
 
         // Tambahkan validasi is_unique hanya jika judul berubah
-        if ($beritaLama['judul'] !== $this->request->getPost('judul')) {
+        if ($beritaLama->judul !== $this->request->getPost('judul')) {
             $rules['judul']['rules'] .= '|is_unique[berita.judul]';
             $rules['judul']['errors']['is_unique'] = 'Judul berita sudah ada.';
         }

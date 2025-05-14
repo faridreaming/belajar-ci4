@@ -11,5 +11,6 @@ class DatabaseSeeder extends Seeder
         $this->call('AdminSeeder');
         $this->call('GambarSeeder');
         $this->call('BeritaSeeder');
+        $this->call('PrestasiSeeder');
     }
 }

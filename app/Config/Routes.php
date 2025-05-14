@@ -17,6 +17,13 @@ $routes->group('admin', function ($routes) {
     $routes->get('berita/edit/(:num)', 'Berita::showEditForm/$1');
     $routes->put('berita/(:num)', 'Berita::edit/$1');
 
+    $routes->get('prestasi', 'Prestasi::index');
+    $routes->get('prestasi/tambah', 'Prestasi::showTambahForm');
+    $routes->post('prestasi/tambah', 'Prestasi::tambah');
+    $routes->delete('prestasi/(:num)', 'Prestasi::delete/$1');
+    $routes->get('prestasi/edit/(:num)', 'Prestasi::showEditForm/$1');
+    $routes->put('prestasi/(:num)', 'Prestasi::edit/$1');
+
     $routes->get('gambar', 'Gambar::index');
     $routes->get('gambar/tambah', 'Gambar::showTambahForm');
     $routes->post('gambar/tambah', 'Gambar::tambah');
@@ -28,7 +35,10 @@ $routes->group('admin', function ($routes) {
 // Home routes
 $routes->group('', function ($routes) {
     $routes->get('/', 'Home::index');
+    $routes->get('profil', 'Home::profil');
+    $routes->get('prestasi', 'Home::prestasi');
     $routes->get('berita', 'Home::berita');
+    $routes->get('prestasi/(:segment)', 'Home::prestasiDetail/$1');
 });
 
 // Auth routes
