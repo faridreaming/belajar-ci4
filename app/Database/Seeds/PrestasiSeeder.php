@@ -57,6 +57,18 @@ class PrestasiSeeder extends Seeder
     'created_at' => '2025-05-14 07:57:13',
     'updated_at' => '2025-05-14 07:57:13',
   ),
+  4 => 
+  array (
+    'prestasi_id' => '6',
+    'gambar_id' => '6',
+    'prestasi' => 'Juara III Lomba Mewarnai Tingkat Guru IGRA Medan Denai',
+    'slug' => 'juara-iii-lomba-mewarnai-tingkat-guru-igra-medan-denai',
+    'tingkat' => 'Kabupaten/Kota',
+    'jenis' => 'Prestasi Pengajar',
+    'deskripsi' => 'Prestasi GTK Cabang Lomba Mewarnai',
+    'created_at' => '2025-05-14 12:56:06',
+    'updated_at' => '2025-05-14 12:56:06',
+  ),
 );
 
         // Handle datetime fields

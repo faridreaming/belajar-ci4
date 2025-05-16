@@ -148,13 +148,41 @@ class Gambar extends BaseController
             return redirect()->to(base_url('admin/gambar'))->with('error', 'Gambar tidak ditemukan.');
         }
 
-        // Delete the image file
-        if (file_exists('assets/img/upload/' . $gambar['nama_file'])) {
-            unlink('assets/img/upload/' . $gambar['nama_file']);
+        // Get database instance
+        $db = \Config\Database::connect();
+
+        // Start a database transaction
+        $db->transStart();
+
+        try {
+            // Set gambar_id to null in berita table
+            $db->table('berita')
+                ->where('gambar_id', $id)
+                ->update(['gambar_id' => null]);
+
+            // Set gambar_id to null in prestasi table
+            $db->table('prestasi')
+                ->where('gambar_id', $id)
+                ->update(['gambar_id' => null]);
+
+            // Delete the image file
+            if (file_exists('assets/img/upload/' . $gambar->nama_file)) {
+                unlink('assets/img/upload/' . $gambar->nama_file);
+            }
+
+            // Delete the gambar record
+            $this->gambarModel->delete($id);
+
+            // Commit the transaction
+            $db->transCommit();
+
+            $this->session->setFlashdata('success', 'Gambar berhasil dihapus.');
+        } catch (\Exception $e) {
+            // Rollback the transaction if any error occurs
+            $db->transRollback();
+            $this->session->setFlashdata('error', 'Terjadi kesalahan saat menghapus gambar.');
         }
 
-        $this->gambarModel->delete($id);
-        $this->session->setFlashdata('success', 'Gambar berhasil dihapus.');
         return redirect()->to(base_url('admin/gambar'));
     }
 }

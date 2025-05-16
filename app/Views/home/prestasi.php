@@ -1,10 +1,12 @@
 <?= $this->extend('layouts/main_layout') ?>
 
 <?= $this->section('content') ?>
-<div class="container mt-5 py-5">
-    <div class="mb-5 text-center">
-        <img src="<?= base_url('assets/img/logo.png'); ?>" alt="Logo" class="mb-4 hero-logo">
-        <h1 class="fw-bold mb-3">PRESTASI KAMI</h1>
+<div class="hero">
+    <div class="container mt-5 py-5">
+        <div class="mb-5 text-center">
+            <img src="<?= base_url('assets/img/logo.png'); ?>" alt="Logo" class="mb-4 hero-logo">
+            <h1 class="fw-bold mb-3 text-white">PRESTASI RA AR-RAYHAN</h1>
+        </div>
     </div>
 </div>
 

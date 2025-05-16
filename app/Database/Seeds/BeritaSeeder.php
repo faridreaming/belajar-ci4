@@ -29,7 +29,26 @@ Oleh karena itu, diperlukan adanya website resmi yang dapat menjadi pusat inform
 
 Melalui website ini, diharapkan RA Ar-Rayhan dapat meningkatkan visibilitasnya secara digital serta memberikan kemudahan bagi masyarakat dalam mengakses informasi seputar pendidikan dan kegiatan yang diselenggarakan oleh yayasan.',
     'created_at' => '2025-05-14 07:57:30',
-    'updated_at' => '2025-05-14 07:57:30',
+    'updated_at' => '2025-05-16 08:21:23',
+  ),
+  1 => 
+  array (
+    'berita_id' => '2',
+    'gambar_id' => '7',
+    'judul' => 'Penerimaan Peserta Didik Baru RA Ar-Rayhan Telah Dibuka',
+    'slug' => 'penerimaan-peserta-didik-baru-ra-ar-rayhan-telah-dibuka',
+    'isi' => '🎉 Penerimaan Peserta Didik Baru (PPDB) RA Ar-Rayhan Medan Denai Tahun Ajaran 2025 Telah Dibuka! 🎉
+
+Dengan penuh semangat dan dedikasi dalam mendidik generasi muda yang cerdas, mandiri, dan berakhlakul karimah, RA Ar-Rayhan Medan Denai mengumumkan bahwa Penerimaan Peserta Didik Baru (PPDB) Tahun Ajaran 2025 telah resmi dibuka mulai 1 Desember 2024 hingga 31 Januari 2025 untuk Gelombang 1.
+
+📍 RA Ar-Rayhan merupakan madrasah unggulan yang telah terakreditasi A, dan terus berkembang dalam memberikan layanan pendidikan anak usia dini berbasis Islam dengan metode belajar sambil bermain. Kami menggunakan Kurikulum Merdeka yang disesuaikan untuk anak usia Golden Age, dengan kegiatan yang mendukung perkembangan minat, bakat, dan karakter anak.
+
+📞 Untuk informasi dan pendaftaran, silakan hubungi:
+0852-9762-9760
+
+📌 Jangan lewatkan kesempatan emas ini untuk menjadi bagian dari keluarga besar RA Ar-Rayhan Medan Denai! Mari wujudkan generasi masa depan yang beriman, cerdas, dan mandiri bersama kami.',
+    'created_at' => '2025-05-16 08:26:38',
+    'updated_at' => '2025-05-16 08:36:04',
   ),
 );
 

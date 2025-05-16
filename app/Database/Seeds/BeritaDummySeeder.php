@@ -1,0 +1,197 @@
+<?php
+
+namespace App\Database\Seeds;
+
+use CodeIgniter\Database\Seeder;
+
+class BeritaDummySeeder extends Seeder
+{
+    public function run()
+    {
+        $data = [
+            [
+                'berita_id' => '1',
+                'gambar_id' => '1',
+                'judul' => 'Teknologi AI Terbaru Mengubah Cara Kerja Industri',
+                'slug' => 'teknologi-ai-terbaru-mengubah-cara-kerja-industri',
+                'isi' => 'Perkembangan teknologi AI telah membawa perubahan signifikan dalam berbagai sektor industri. Para ahli memprediksi bahwa dalam beberapa tahun ke depan, implementasi AI akan semakin meluas dan memberikan dampak positif bagi produktivitas perusahaan.',
+                'created_at' => '2024-03-14 07:57:30',
+                'updated_at' => '2024-03-14 07:57:30',
+            ],
+            [
+                'berita_id' => '2',
+                'gambar_id' => '1',
+                'judul' => 'Indonesia Raih Medali Emas di Olimpiade Sains',
+                'slug' => 'indonesia-raih-medali-emas-di-olimpiade-sains',
+                'isi' => 'Tim Indonesia berhasil meraih medali emas dalam Olimpiade Sains Internasional yang diselenggarakan di Tokyo, Jepang. Prestasi ini membanggakan dan membuktikan kualitas pendidikan sains di Indonesia semakin meningkat.',
+                'created_at' => '2024-03-15 09:30:00',
+                'updated_at' => '2024-03-15 09:30:00',
+            ],
+            [
+                'berita_id' => '3',
+                'gambar_id' => '1',
+                'judul' => 'Inovasi Energi Terbarukan untuk Masa Depan Berkelanjutan',
+                'slug' => 'inovasi-energi-terbarukan-untuk-masa-depan-berkelanjutan',
+                'isi' => 'Para peneliti telah mengembangkan teknologi baru dalam bidang energi terbarukan yang lebih efisien dan ramah lingkungan. Terobosan ini diharapkan dapat mengurangi ketergantungan pada bahan bakar fosil dan mendukung upaya pelestarian lingkungan.',
+                'created_at' => '2024-03-16 11:15:00',
+                'updated_at' => '2024-03-16 11:15:00',
+            ],
+            [
+                'berita_id' => '4',
+                'gambar_id' => '1',
+                'judul' => 'Festival Kuliner Nusantara Sukses Digelar',
+                'slug' => 'festival-kuliner-nusantara-sukses-digelar',
+                'isi' => 'Festival Kuliner Nusantara yang diselenggarakan di Jakarta Convention Center berhasil menarik ribuan pengunjung. Event ini menampilkan beragam masakan tradisional dari berbagai daerah di Indonesia dan mendapat sambutan antusias dari masyarakat.',
+                'created_at' => '2024-03-17 13:45:00',
+                'updated_at' => '2024-03-17 13:45:00',
+            ],
+            [
+                'berita_id' => '5',
+                'gambar_id' => '1',
+                'judul' => 'Startup Lokal Raih Pendanaan Series A',
+                'slug' => 'startup-lokal-raih-pendanaan-series-a',
+                'isi' => 'Sebuah startup teknologi asal Indonesia berhasil mendapatkan pendanaan Series A senilai 10 juta dolar AS. Pendanaan ini akan digunakan untuk pengembangan produk dan ekspansi ke pasar regional Asia Tenggara.',
+                'created_at' => '2024-03-18 15:20:00',
+                'updated_at' => '2024-03-18 15:20:00',
+            ],
+            [
+                'berita_id' => '6',
+                'gambar_id' => '1',
+                'judul' => 'Program Beasiswa untuk Mahasiswa Berprestasi Dibuka',
+                'slug' => 'program-beasiswa-untuk-mahasiswa-berprestasi-dibuka',
+                'isi' => 'Kementerian Pendidikan membuka program beasiswa baru untuk mahasiswa berprestasi dari seluruh Indonesia. Program ini mencakup biaya kuliah penuh dan tunjangan bulanan selama masa studi.',
+                'created_at' => '2024-03-19 08:00:00',
+                'updated_at' => '2024-03-19 08:00:00',
+            ],
+            [
+                'berita_id' => '7',
+                'gambar_id' => '1',
+                'judul' => 'Pameran Seni Digital NFT Pertama di Indonesia',
+                'slug' => 'pameran-seni-digital-nft-pertama-di-indonesia',
+                'isi' => 'Jakarta menjadi tuan rumah pameran seni digital NFT pertama di Indonesia, menampilkan karya-karya dari seniman lokal dan internasional. Event ini menjadi bukti berkembangnya industri kreatif digital di tanah air.',
+                'created_at' => '2024-03-20 09:15:00',
+                'updated_at' => '2024-03-20 09:15:00',
+            ],
+            [
+                'berita_id' => '8',
+                'gambar_id' => '1',
+                'judul' => 'Penemuan Spesies Baru di Hutan Kalimantan',
+                'slug' => 'penemuan-spesies-baru-di-hutan-kalimantan',
+                'isi' => 'Tim peneliti berhasil menemukan spesies baru flora dan fauna di kawasan hutan Kalimantan. Penemuan ini menambah kekayaan biodiversitas Indonesia dan pentingnya konservasi hutan.',
+                'created_at' => '2024-03-21 10:30:00',
+                'updated_at' => '2024-03-21 10:30:00',
+            ],
+            [
+                'berita_id' => '9',
+                'gambar_id' => '1',
+                'judul' => 'Atlet Muda Indonesia Pecahkan Rekor Dunia',
+                'slug' => 'atlet-muda-indonesia-pecahkan-rekor-dunia',
+                'isi' => 'Seorang atlet renang Indonesia berhasil memecahkan rekor dunia dalam kejuaraan internasional. Prestasi ini menjadi motivasi bagi atlet-atlet muda lainnya untuk terus berprestasi.',
+                'created_at' => '2024-03-22 11:45:00',
+                'updated_at' => '2024-03-22 11:45:00',
+            ],
+            [
+                'berita_id' => '10',
+                'gambar_id' => '1',
+                'judul' => 'Peluncuran Satelit Komunikasi Terbaru Indonesia',
+                'slug' => 'peluncuran-satelit-komunikasi-terbaru-indonesia',
+                'isi' => 'Indonesia berhasil meluncurkan satelit komunikasi terbarunya yang akan memperkuat infrastruktur telekomunikasi nasional dan menjangkau daerah-daerah terpencil.',
+                'created_at' => '2024-03-23 13:00:00',
+                'updated_at' => '2024-03-23 13:00:00',
+            ],
+            [
+                'berita_id' => '11',
+                'gambar_id' => '1',
+                'judul' => 'Festival Film Dokumenter Internasional',
+                'slug' => 'festival-film-dokumenter-internasional',
+                'isi' => 'Festival Film Dokumenter Internasional digelar di Yogyakarta, menampilkan karya-karya dokumenter terbaik dari berbagai negara. Event ini menjadi wadah pertukaran budaya dan ide kreatif.',
+                'created_at' => '2024-03-24 14:15:00',
+                'updated_at' => '2024-03-24 14:15:00',
+            ],
+            [
+                'berita_id' => '12',
+                'gambar_id' => '1',
+                'judul' => 'Inovasi Sistem Transportasi Ramah Lingkungan',
+                'slug' => 'inovasi-sistem-transportasi-ramah-lingkungan',
+                'isi' => 'Pemerintah kota mengenalkan sistem transportasi umum berbasis listrik yang ramah lingkungan. Program ini bertujuan mengurangi emisi karbon dan kemacetan di perkotaan.',
+                'created_at' => '2024-03-25 15:30:00',
+                'updated_at' => '2024-03-25 15:30:00',
+            ],
+            [
+                'berita_id' => '13',
+                'gambar_id' => '1',
+                'judul' => 'Pembangunan Pusat Riset Teknologi Modern',
+                'slug' => 'pembangunan-pusat-riset-teknologi-modern',
+                'isi' => 'Groundbreaking pembangunan pusat riset teknologi modern telah dilakukan. Fasilitas ini akan menjadi pusat pengembangan teknologi dan inovasi di Indonesia.',
+                'created_at' => '2024-03-26 16:45:00',
+                'updated_at' => '2024-03-26 16:45:00',
+            ],
+            [
+                'berita_id' => '14',
+                'gambar_id' => '1',
+                'judul' => 'Kolaborasi Seniman Tradisional dan Modern',
+                'slug' => 'kolaborasi-seniman-tradisional-dan-modern',
+                'isi' => 'Para seniman tradisional dan modern berkolaborasi dalam sebuah pertunjukan spektakuler yang memadukan unsur budaya tradisional dengan teknologi modern.',
+                'created_at' => '2024-03-27 17:00:00',
+                'updated_at' => '2024-03-27 17:00:00',
+            ],
+            [
+                'berita_id' => '15',
+                'gambar_id' => '1',
+                'judul' => 'Program Pemberdayaan UMKM Digital',
+                'slug' => 'program-pemberdayaan-umkm-digital',
+                'isi' => 'Pemerintah meluncurkan program pemberdayaan UMKM untuk go digital. Program ini bertujuan meningkatkan daya saing UMKM dalam era ekonomi digital.',
+                'created_at' => '2024-03-28 18:15:00',
+                'updated_at' => '2024-03-28 18:15:00',
+            ],
+            [
+                'berita_id' => '16',
+                'gambar_id' => '1',
+                'judul' => 'Penemuan Situs Arkeologi Bersejarah',
+                'slug' => 'penemuan-situs-arkeologi-bersejarah',
+                'isi' => 'Tim arkeolog menemukan situs bersejarah di Jawa Tengah yang diperkirakan berasal dari abad ke-8. Penemuan ini memberikan informasi baru tentang sejarah Indonesia.',
+                'created_at' => '2024-03-29 19:30:00',
+                'updated_at' => '2024-03-29 19:30:00',
+            ],
+            [
+                'berita_id' => '17',
+                'gambar_id' => '1',
+                'judul' => 'Kompetisi Robot Nasional 2024',
+                'slug' => 'kompetisi-robot-nasional-2024',
+                'isi' => 'Ratusan tim dari berbagai universitas berkompetisi dalam Kompetisi Robot Nasional 2024. Event ini menunjukkan perkembangan teknologi robotika di Indonesia.',
+                'created_at' => '2024-03-30 20:45:00',
+                'updated_at' => '2024-03-30 20:45:00',
+            ],
+            [
+                'berita_id' => '18',
+                'gambar_id' => '1',
+                'judul' => 'Pelestarian Bahasa Daerah Melalui Aplikasi',
+                'slug' => 'pelestarian-bahasa-daerah-melalui-aplikasi',
+                'isi' => 'Sebuah aplikasi pembelajaran bahasa daerah diluncurkan untuk membantu melestarikan bahasa-bahasa daerah di Indonesia. Aplikasi ini menggunakan teknologi AI untuk metode pembelajaran yang interaktif.',
+                'created_at' => '2024-03-31 21:00:00',
+                'updated_at' => '2024-03-31 21:00:00',
+            ],
+            [
+                'berita_id' => '19',
+                'gambar_id' => '1',
+                'judul' => 'Pengembangan Vaksin Covid-19 Generasi Terbaru',
+                'slug' => 'pengembangan-vaksin-covid-19-generasi-terbaru',
+                'isi' => 'Tim peneliti Indonesia berhasil mengembangkan vaksin Covid-19 generasi terbaru yang lebih efektif terhadap varian baru. Vaksin ini sedang dalam tahap uji klinis.',
+                'created_at' => '2024-04-01 22:15:00',
+                'updated_at' => '2024-04-01 22:15:00',
+            ],
+            [
+                'berita_id' => '20',
+                'gambar_id' => '1',
+                'judul' => 'Pembukaan Taman Kota Ramah Anak',
+                'slug' => 'pembukaan-taman-kota-ramah-anak',
+                'isi' => 'Sebuah taman kota ramah anak diresmikan di Jakarta. Taman ini dilengkapi dengan fasilitas edukatif dan area bermain yang aman untuk anak-anak.',
+                'created_at' => '2024-04-02 23:30:00',
+                'updated_at' => '2024-04-02 23:30:00',
+            ]
+        ];
+
+        // Handle datetime fields
+        $this->db->table('berita')->insertBatch($data);
+    }
+}

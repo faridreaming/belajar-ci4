@@ -69,22 +69,22 @@
 
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item">
-                    <a href="<?= base_url('admin'); ?>" class="nav-link <?= $is_admin && !$is_berita && !$is_prestasi && !$is_gambar ? 'bg-success text-white disabled' : 'link-dark'; ?> rounded">
+                    <a href="<?= base_url('admin'); ?>" class="nav-link <?= $is_admin && !$is_berita && !$is_prestasi && !$is_gambar ? 'bg-success text-white' : 'link-dark'; ?> rounded">
                         <i class="bi bi-house-door me-2"></i> Dashboard
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url('admin/berita'); ?>" class="mt-1 nav-link <?= $is_berita ? 'bg-success text-white disabled' : 'link-dark'; ?> rounded">
+                    <a href="<?= base_url('admin/berita'); ?>" class="mt-1 nav-link <?= $is_berita ? 'bg-success text-white' : 'link-dark'; ?> rounded">
                         <i class="bi bi-newspaper me-2"></i> Berita
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url('admin/prestasi'); ?>" class="mt-1 nav-link <?= $is_prestasi ? 'bg-success text-white disabled' : 'link-dark'; ?> rounded">
+                    <a href="<?= base_url('admin/prestasi'); ?>" class="mt-1 nav-link <?= $is_prestasi ? 'bg-success text-white' : 'link-dark'; ?> rounded">
                         <i class="bi bi-trophy me-2"></i> Prestasi
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url('admin/gambar'); ?>" class="mt-1 nav-link <?= $is_gambar ? 'bg-success text-white disabled' : 'link-dark'; ?> rounded">
+                    <a href="<?= base_url('admin/gambar'); ?>" class="mt-1 nav-link <?= $is_gambar ? 'bg-success text-white' : 'link-dark'; ?> rounded">
                         <i class="bi bi-images me-2"></i> Gambar
                     </a>
                 </li>

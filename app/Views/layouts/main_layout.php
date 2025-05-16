@@ -58,14 +58,7 @@
                         <a class="nav-link <?= $is_galeri ? 'active' : ''; ?>" href="<?= base_url('galeri'); ?>">Galeri</a>
                     </li>
                 </ul>
-                <form class="d-flex" role="search">
-                    <div class="input-group">
-                        <input class="form-control border-success" type="search" placeholder="Cari..." aria-label="Search">
-                        <button class="btn btn-outline-success" type="submit">
-                            <i class="bi bi-search"></i>
-                        </button>
-                    </div>
-                </form>
+                                <form class="d-flex" role="search" action="<?= base_url('search') ?>" method="get">                    <div class="input-group border rounded">                        <input class="form-control bg-light border-0" type="search" name="q" placeholder="Cari..." aria-label="Search" value="<?= isset($keyword) ? esc($keyword) : '' ?>">                        <button class="btn btn-light" type="submit">                            <i class="bi bi-search"></i>                        </button>                    </div>                </form>
             </div>
         </div>
     </nav>
@@ -157,6 +150,46 @@
         </div>
     </footer>
     <script src="<?= base_url('assets/js/bootstrap.bundle.min.js'); ?>"></script>
+    
+    <!-- Gallery Modal Navigation Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const imageModal = document.getElementById('imageModal');
+        if (imageModal) {
+            const carousel = new bootstrap.Carousel(document.getElementById('imageCarousel'), {
+                interval: false,
+                keyboard: true
+            });
+
+            // Handle modal show event
+            imageModal.addEventListener('show.bs.modal', function(event) {
+                const link = event.relatedTarget;
+                const slideIndex = link.getAttribute('data-bs-slide-to');
+                carousel.to(parseInt(slideIndex));
+            });
+
+            // Handle keyboard navigation
+            imageModal.addEventListener('keydown', function(event) {
+                if (event.key === 'ArrowLeft') {
+                    carousel.prev();
+                } else if (event.key === 'ArrowRight') {
+                    carousel.next();
+                } else if (event.key === 'Escape') {
+                    bootstrap.Modal.getInstance(imageModal).hide();
+                }
+            });
+
+            // Prevent scrolling when modal is open
+            imageModal.addEventListener('shown.bs.modal', function() {
+                document.body.style.overflow = 'hidden';
+            });
+
+            imageModal.addEventListener('hidden.bs.modal', function() {
+                document.body.style.overflow = '';
+            });
+        }
+    });
+    </script>
 </body>
 
 </html> 

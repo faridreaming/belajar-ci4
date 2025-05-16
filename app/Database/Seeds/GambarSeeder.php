@@ -14,27 +14,27 @@ class GambarSeeder extends Seeder
     'gambar_id' => '1',
     'judul' => 'Kunjungan Mahasiswa TRPL-4C',
     'jenis' => 'Lainnya',
-    'nama_file' => '1747182774_0e60762ef7702ced6778.webp',
+    'nama_file' => '1747361741_c7c81d4e93106342ec8c.webp',
     'created_at' => '2025-05-14 07:57:30',
-    'updated_at' => '2025-05-14 07:57:30',
+    'updated_at' => '2025-05-16 09:15:41',
   ),
   1 => 
   array (
     'gambar_id' => '2',
     'judul' => 'Juara Lomba Tahfidz dan Mewarnai	',
     'jenis' => 'Prestasi',
-    'nama_file' => '1747183497_d928bfd0d4968c32be22.jpg',
+    'nama_file' => '1747361992_73166a2bd21614d98ddc.jpg',
     'created_at' => '2025-05-14 07:57:30',
-    'updated_at' => '2025-05-14 07:57:30',
+    'updated_at' => '2025-05-16 09:19:52',
   ),
   2 => 
   array (
     'gambar_id' => '3',
     'judul' => 'Juara Tahfidz TK',
     'jenis' => 'Prestasi',
-    'nama_file' => '1747183684_471fc20be797ea29bf51.jpg',
+    'nama_file' => '1747362067_6ffb9220729e3d346843.jpg',
     'created_at' => '2025-05-14 07:57:30',
-    'updated_at' => '2025-05-14 07:57:30',
+    'updated_at' => '2025-05-16 09:21:07',
   ),
   3 => 
   array (
@@ -53,6 +53,24 @@ class GambarSeeder extends Seeder
     'nama_file' => '1747183759_8d2a839578cd42429c30.jpg',
     'created_at' => '2025-05-14 07:57:30',
     'updated_at' => '2025-05-14 07:57:30',
+  ),
+  5 => 
+  array (
+    'gambar_id' => '6',
+    'judul' => 'Prestasi GTK Cabang Lomba Mewarnai',
+    'jenis' => 'Prestasi',
+    'nama_file' => '1747362108_75a954242d8c3dc16e6a.jpg',
+    'created_at' => '2025-05-14 12:52:40',
+    'updated_at' => '2025-05-16 09:21:48',
+  ),
+  6 => 
+  array (
+    'gambar_id' => '7',
+    'judul' => 'Penerimaan Peserta Didik Baru RA Ar-Rayhan',
+    'jenis' => 'Lainnya',
+    'nama_file' => '1747362118_fe759398d5a17b482389.jpg',
+    'created_at' => '2025-05-16 08:35:50',
+    'updated_at' => '2025-05-16 09:21:58',
   ),
 );
 

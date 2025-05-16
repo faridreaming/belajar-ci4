@@ -38,7 +38,9 @@ $routes->group('', function ($routes) {
     $routes->get('profil', 'Home::profil');
     $routes->get('prestasi', 'Home::prestasi');
     $routes->get('berita', 'Home::berita');
-    $routes->get('prestasi/(:segment)', 'Home::prestasiDetail/$1');
+    $routes->get('berita/(:segment)', 'Berita::detail/$1');
+    $routes->get('galeri', 'Galeri::index');
+    $routes->get('search', 'Search::index');
 });
 
 // Auth routes

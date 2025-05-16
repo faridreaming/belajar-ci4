@@ -47,20 +47,23 @@ class Home extends BaseController
         return view('home/prestasi', $data);
     }
 
-    public function prestasiDetail($slug)
+    public function berita()
     {
-        $prestasi = $this->prestasiModel->getPrestasiWithGambar()
-            ->where('prestasi.slug', $slug)
-            ->first();
-
-        if (!$prestasi) {
-            return redirect()->to(base_url('prestasi'))->with('error', 'Prestasi tidak ditemukan.');
-        }
+        $pager = \Config\Services::pager();
+        $page = $this->request->getVar('page') ? $this->request->getVar('page') : 1;
+        $perPage = 9;
+        
+        $total = $this->beritaModel->getBeritaWithGambar()->countAllResults();
+        $berita = $this->beritaModel->getBeritaWithGambar()
+            ->orderBy('berita.created_at', 'DESC')
+            ->paginate($perPage, 'berita');
 
         $data = [
-            'title' => $prestasi->prestasi,
-            'prestasi' => $prestasi,
+            'title' => 'Berita',
+            'berita' => $berita,
+            'pager' => $this->beritaModel->pager,
+            'currentPage' => $page
         ];
-        return view('home/prestasi_detail', $data);
+        return view('home/berita', $data);
     }
 }

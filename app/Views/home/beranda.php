@@ -3,23 +3,19 @@
 <?= $this->section('content') ?>
 <?php helper(['text', 'time']); ?>
 <!-- Hero Section -->
-<div class="bg-white d-flex align-items-center py-5 mt-5">
-    <div class="container">
+<div class="hero">
+    <div class="container mt-5 py-5">
         <div class="row align-items-center">
             <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
                 <img src="<?= base_url('assets/img/logo.png'); ?>" alt="Logo" class="mb-4 hero-logo">
-                <img src="<?= base_url('assets/img/akreditasi-a.png'); ?>" alt="Logo" class="mb-4 hero-logo">
-                <h1 class="fw-bold mb-3">RAUDHATUL ATHFAL<br>
+                <h1 class="fw-bold mb-3 text-white">RAUDHATUL ATHFAL<br>
                     AR-RAYHAN</h1>
-                <p class="lead mb-4">
+                <p class="lead mb-4 text-white">
                     TERAKREDITASI A
                 </p>
-                <a href="<?= base_url('tentang'); ?>" class="btn btn-success btn-lg rounded-pill px-4">
+                <a href="<?= base_url('profil'); ?>" class="btn btn-success btn-lg rounded-pill px-4 fs-6">
                     Selengkapnya<i class="bi bi-arrow-right ms-2"></i>
                 </a>
-            </div>
-            <div class="col-lg-6">
-                <img src="<?= base_url('assets/img/hero.png'); ?>" alt="Hero Image" class="img-fluid rounded border shadow-sm">
             </div>
         </div>
     </div>
@@ -29,7 +25,7 @@
 <div class="container px-3 py-5">
     <div class="row align-items-center">
         <div class="col-lg-3 col-md-4 mb-3 mb-md-0 text-center text-md-start">
-            <img src="<?= base_url('assets/img/kepala-sekolah.png'); ?>" alt="Foto Kepala Sekolah" class="img-fluid foto-kepala-sekolah">
+            <img src="<?= base_url('assets/img/kepala-sekolah.png'); ?>" alt="Foto Kepala Sekolah" class="img-fluid foto-kepala-sekolah rounded">
         </div>
         <div class="col-lg-9 col-md-8 text-center text-md-start">
             <h2 class="fw-bold">SAMBUTAN KEPALA SEKOLAH</h2>
@@ -50,7 +46,7 @@
                 <div class="bg-white h-100">
                     <?php if (!empty($berita) && isset($berita[0])): $b = $berita[0]; ?>
                         <div class="mb-2">
-                            <img src="<?= $b->gambar_id ? base_url('assets/img/upload/' . $b->nama_file_gambar) : base_url('assets/img/upload/default.jpg'); ?>" alt="<?= esc($b->judul); ?>" class="img-fluid w-100 object-fit-cover berita-utama-img">
+                            <img src="<?= $b->gambar_id ? base_url('assets/img/upload/' . $b->nama_file_gambar) : base_url('assets/img/upload/default.jpg'); ?>" alt="<?= esc($b->judul); ?>" class="img-fluid w-100 object-fit-cover berita-utama-img rounded">
                         </div>
                         <h5 class="fw-bold text-success"><?= esc($b->judul); ?></h5>
                         <div class="mb-2 small text-muted">
@@ -71,7 +67,7 @@
                     <?php for ($i = 1; $i < 5; $i++): if (!isset($berita[$i])) break; $b = $berita[$i]; ?>
                         <div class="col-6">
                             <div class="bg-white h-100">
-                                <img src="<?= $b->gambar_id ? base_url('assets/img/upload/' . $b->nama_file_gambar) : base_url('assets/img/upload/default.jpg'); ?>" alt="<?= esc($b->judul); ?>" class="img-fluid mb-2 berita-lain-img">
+                                <img src="<?= $b->gambar_id ? base_url('assets/img/upload/' . $b->nama_file_gambar) : base_url('assets/img/upload/default.jpg'); ?>" alt="<?= esc($b->judul); ?>" class="img-fluid mb-2 berita-lain-img rounded">
                                 <div class="fw-semibold mb-0">
                                     <a href="<?= base_url('berita/' . $b->slug); ?>" class="text-success text-decoration-none hover-underline"><?= esc($b->judul); ?></a>
                                 </div>
@@ -83,7 +79,7 @@
                     <?php endfor; ?>
                 </div>
                 <div class="d-flex justify-content-end mt-4">
-                    <a href="<?= base_url('berita'); ?>" class="btn btn-success rounded-pill px-4 fw-semibold">Berita lainnya<i class="bi bi-box-arrow-up-right ms-2"></i></a>
+                    <a href="<?= base_url('berita'); ?>" class="btn btn-success rounded-pill px-4">Berita lainnya<i class="bi bi-box-arrow-up-right ms-2"></i></a>
                 </div>
             </div>
         </div>

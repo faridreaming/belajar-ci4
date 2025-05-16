@@ -184,4 +184,28 @@ class Berita extends BaseController
         $this->session->setFlashdata('success', 'Berita berhasil dihapus.');
         return redirect()->to(base_url('admin/berita'));
     }
+
+    public function detail($slug)
+    {
+        $berita = $this->beritaModel->getBeritaWithGambar()
+                                   ->where('berita.slug', $slug)
+                                   ->first();
+
+        if (!$berita) {
+            return redirect()->to(base_url('berita'))->with('error', 'Berita tidak ditemukan.');
+        }
+
+        $data = [
+            'title' => $berita->judul,
+            'berita' => $berita,
+            'recent_berita' => $this->beritaModel->getBeritaWithGambar()
+                                                ->where('berita.berita_id !=', $berita->berita_id)
+                                                ->orderBy('created_at', 'DESC')
+                                                ->limit(5)
+                                                ->get()
+                                                ->getResult()
+        ];
+
+        return view('home/berita_detail', $data);
+    }
 }

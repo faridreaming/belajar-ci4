@@ -116,9 +116,6 @@ $totalSegments = $uri->getTotalSegments(); ?>
                             <td><?= esc($prestasi->jenis); ?></td>
                             <td>
                                 <div class="d-flex flex-nowrap gap-1">
-                                    <a class="btn btn-sm btn-success text-white" title="Lihat prestasi" href="<?= base_url('prestasi/' . $prestasi->slug); ?>">
-                                        <i class="bi bi-eye"></i>
-                                    </a>
                                     <a class="btn btn-sm btn-primary" title="Edit prestasi" href="<?= base_url('admin/prestasi/edit/' . $prestasi->prestasi_id); ?>">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
