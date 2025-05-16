@@ -134,7 +134,7 @@
                 <div class="col-md-4">
                     <div class="h-100 rounded overflow-hidden shadow-sm">
                         <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d927.3789331635066!2d98.71491928225758!3d3.580944835511625!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zM8KwMzQnNTEuNCJOIDk4wrA0Mic1NS4zIkU!5e0!3m2!1sid!2sid!4v1747004493201!5m2!1sid!2sid" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d703.9295270928197!2d98.71547351059282!3d3.581332478562434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3031311d36f470e7%3A0x5fe1aa979bea2c41!2sGg.%20Aneka%20Buntu%20Jl.%20Denai%20No.4B%2C%20Tegal%20Sari%20Mandala%20III%2C%20Kec.%20Medan%20Denai%2C%20Kota%20Medan%2C%20Sumatera%20Utara%2020227!5e0!3m2!1sid!2sid!4v1747379059874!5m2!1sid!2sid" 
                             class="w-100 h-100" 
                             style="border:0; min-height:300px;" 
                             allowfullscreen="" 
