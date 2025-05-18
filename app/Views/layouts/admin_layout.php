@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $title; ?> | RA Ar-Rayhan</title>
+    <link rel="icon" href="<?= base_url('favicon.ico'); ?>" type="image/x-icon">
     <link href="<?= base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/bootstrap-icons.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/admin-style.css'); ?>" rel="stylesheet">

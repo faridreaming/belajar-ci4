@@ -15,11 +15,11 @@
         <!-- Prestasi Siswa -->
         <div class="mb-5">
             <h2 class="fw-bold text-success mb-4 border-start border-success border-4 ps-3">PRESTASI SISWA</h2>
-            <div class="row g-4">
+            <div class="row g-4 flex-nowrap overflow-auto pb-3">
                 <?php foreach ($prestasiByJenis['Prestasi Siswa'] as $prestasi): ?>
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" style="min-width: 300px;">
                         <div class="card h-100 border">
-                            <img src="<?= base_url('assets/img/upload/' . $prestasi->nama_file_gambar); ?>" class="card-img-top" alt="<?= $prestasi->judul_gambar ?>">
+                            <img src="<?= base_url('assets/img/upload/' . (!empty($prestasi->nama_file_gambar) ? $prestasi->nama_file_gambar : 'default.jpg')); ?>" class="card-img-top" alt="<?= $prestasi->judul_gambar ?>">
                             <div class="card-body">
                                 <div class="badge bg-success mb-2"><?= $prestasi->tingkat ?></div>
                                 <h5 class="card-title fw-bold"><?= $prestasi->prestasi ?></h5>
@@ -34,11 +34,11 @@
         <!-- Prestasi Pengajar -->
         <div class="mb-5">
             <h2 class="fw-bold text-success mb-4 border-start border-success border-4 ps-3">PRESTASI PENGAJAR</h2>
-            <div class="row g-4">
+            <div class="row g-4 flex-nowrap overflow-auto pb-3">
                 <?php foreach ($prestasiByJenis['Prestasi Pengajar'] as $prestasi): ?>
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" style="min-width: 300px;">
                         <div class="card h-100 border">
-                            <img src="<?= base_url('assets/img/upload/' . $prestasi->nama_file_gambar); ?>" class="card-img-top" alt="<?= $prestasi->judul_gambar ?>">
+                            <img src="<?= base_url('assets/img/upload/' . (!empty($prestasi->nama_file_gambar) ? $prestasi->nama_file_gambar : 'default.jpg')); ?>" class="card-img-top" alt="<?= $prestasi->judul_gambar ?>">
                             <div class="card-body">
                                 <div class="badge bg-success mb-2"><?= $prestasi->tingkat ?></div>
                                 <h5 class="card-title fw-bold"><?= $prestasi->prestasi ?></h5>
@@ -53,11 +53,11 @@
         <!-- Prestasi Lembaga -->
         <div>
             <h2 class="fw-bold text-success mb-4 border-start border-success border-4 ps-3">PRESTASI LEMBAGA</h2>
-            <div class="row g-4">
+            <div class="row g-4 flex-nowrap overflow-auto pb-3">
                 <?php foreach ($prestasiByJenis['Prestasi Lembaga'] as $prestasi): ?>
-                    <div class="col-md-6 col-lg-4">
+                    <div class="col-md-6 col-lg-4" style="min-width: 300px;">
                         <div class="card h-100 border">
-                            <img src="<?= base_url('assets/img/upload/' . $prestasi->nama_file_gambar); ?>" class="card-img-top" alt="<?= $prestasi->judul_gambar ?>">
+                            <img src="<?= base_url('assets/img/upload/' . (!empty($prestasi->nama_file_gambar) ? $prestasi->nama_file_gambar : 'default.jpg')); ?>" class="card-img-top" alt="<?= $prestasi->judul_gambar ?>">
                             <div class="card-body">
                                 <div class="badge bg-success mb-2"><?= $prestasi->tingkat ?></div>
                                 <h5 class="card-title fw-bold"><?= $prestasi->prestasi ?></h5>

@@ -4,7 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RA Ar-Rayhan adalah lembaga pendidikan anak usia dini di Medan yang berfokus pada pembentukan karakter Islami dan pembelajaran kreatif.">
+    <meta name="keywords" content="RA Ar-Rayhan, TK Islam Medan, Pendidikan Anak, Sekolah Islam, RA Medan">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://arrayhanmedan.com/">
+    <meta property="og:title" content="RA Ar-Rayhan">
+    <meta property="og:description" content="Pendidikan karakter Islami dan kreatif untuk anak usia dini di Medan.">
+    <meta property="og:image" content="https://arrayhanmedan.com/assets/images/logo.png">
+    <meta property="og:url" content="https://arrayhanmedan.com/">
+    <meta property="og:type" content="website">
     <title><?= $title; ?> | RA Ar-Rayhan</title>
+    <link rel="icon" href="<?= base_url('favicon.ico'); ?>" type="image/x-icon">
     <link href="<?= base_url('assets/css/bootstrap.min.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/bootstrap-icons.css'); ?>" rel="stylesheet">
     <link href="<?= base_url('assets/css/home-style.css'); ?>" rel="stylesheet">

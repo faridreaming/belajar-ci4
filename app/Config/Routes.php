@@ -41,6 +41,7 @@ $routes->group('', function ($routes) {
     $routes->get('berita/(:segment)', 'Berita::detail/$1');
     $routes->get('galeri', 'Galeri::index');
     $routes->get('search', 'Search::index');
+    $routes->get('tim-kami', 'Home::timKami');
 });
 
 // Auth routes

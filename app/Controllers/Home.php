@@ -66,4 +66,12 @@ class Home extends BaseController
         ];
         return view('home/berita', $data);
     }
+
+    public function timKami()
+    {
+        $data = [
+            'title' => 'Tim Kami',
+        ];
+        return view('home/tim_kami', $data);
+    }
 }
